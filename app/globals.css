@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* FRAPPÉ DESIGN SYSTEM TOKENS & TYPOGRAPHY                                   */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* Color Palette Tokens */
+  --color-text-primary: #5a5a5a;
+  --color-text-secondary: #8f8f8f;
+  --color-text-tertiary: #ffffff;
+  --color-text-inverse: #9c9c9c;
+  --color-surface-base: #000000;
+  --color-surface-muted: #fbbcc0;
+  --color-surface-strong: #fab9be;
+  --color-surface-sage: #abe9b0;
+  --color-surface-canvas: #fbfaf7;
+  --color-brand-primary: #23aa5d;
+
+  /* Typography Tokens */
+  --font-primary: var(--font-open-sans), 'Open Sans', sans-serif;
+  --font-heading: var(--font-quicksand), 'Quicksand', sans-serif;
+  --font-accent: var(--font-dawning), 'Dawning of a New Day', cursive;
+
+  /* Spacing Tokens */
+  --space-1: 4px;
+  --space-2: 5px;
+  --space-3: 7px;
+  --space-4: 9px;
+  --space-5: 10px;
+  --space-6: 14px;
+  --space-7: 17px;
+  --space-8: 18px;
+
+  /* Radii & Motion Tokens */
+  --radius-xs: 5px;
+  --motion-instant: 200ms;
+  --motion-fast: 300ms;
+  --motion-normal: 500ms;
+
+  --background: #ffffff;
+  --foreground: #5a5a5a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-primary);
+  line-height: 25px;
+  font-size: 15px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Utility Classes */
+.font-frappe-body {
+  font-family: var(--font-primary);
+}
+
+.font-frappe-heading {
+  font-family: var(--font-heading);
+}
+
+.font-frappe-accent {
+  font-family: var(--font-accent);
+}
+
+/* Frappe Active Item Dotted Indicator */
+.frappe-active-dotted {
+  border-bottom: 2px dotted var(--color-brand-primary);
+}
+
+/* Local fallback font faces */
+@font-face {
+  font-family: 'para';
+  src: url('/fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+  font-family: 'heading-1';
+  src: url('/fonts/Brother-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'heading-2';
+  src: url('/fonts/Lato-Light.ttf');
+}
+

@@ -1,0 +1,11 @@
+# Allow all user agents
+User-agent: *
+  
+# Allow everything except staging or admin (if exists)
+Disallow:
+
+# Sitemap location
+Sitemap: https://www.zussioberry.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 10

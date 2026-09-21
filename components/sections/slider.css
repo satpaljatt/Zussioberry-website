@@ -1,0 +1,45 @@
+/* -------------------------------------------------------------------------- */
+/* FRAPPÉ SLIDER NAVIGATION ARROWS (MINIMALIST CHEVRONS)                      */
+/* -------------------------------------------------------------------------- */
+
+.custom-swiper .swiper-button-prev,
+.custom-swiper .swiper-button-next {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease-in-out;
+  z-index: 30;
+}
+
+.custom-swiper .swiper-button-prev:hover,
+.custom-swiper .swiper-button-next:hover {
+  color: #ffffff !important;
+  transform: scale(1.18);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+}
+
+.custom-swiper .swiper-button-prev::after,
+.custom-swiper .swiper-button-next::after {
+  font-size: 32px !important;
+  font-weight: 300;
+}
+
+.custom-swiper .swiper-button-prev {
+  left: 28px;
+}
+
+.custom-swiper .swiper-button-next {
+  right: 28px;
+}
+
+/* Hide arrows on mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .custom-swiper .swiper-button-prev,
+  .custom-swiper .swiper-button-next {
+    display: none !important;
+  }
+}
+

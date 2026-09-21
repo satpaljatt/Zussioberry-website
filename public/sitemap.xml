@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.zussioberry.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.zussioberry.com/about-us</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/savoury-selections</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/refreshing-beverages</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/trendy-brews</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/frozen-treats</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/franchise</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/gallery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <!-- Blogs & Individual Blog Posts -->
+  <url>
+    <loc>https://www.zussioberry.com/blogs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/blogs/the-secret-behind-our-signature-fruit-blends</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/blogs/why-fresh-juices-smoothies-are-the-perfect-everyday-boost</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/blogs/zussioberry-where-fresh-flavors-meet-happy-vibes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Other -->
+  <url>
+    <loc>https://www.zussioberry.com/career</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.zussioberry.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- PDF (optional but good to include) -->
+  <url>
+    <loc>https://www.zussioberry.com/assets/Franchise%20Deck.pdf</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+
+</urlset>
