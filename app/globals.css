@@ -87,3 +87,28 @@ body {
   src: url('/fonts/Lato-Light.ttf');
 }
 
+/* -------------------------------------------------------------------------- */
+/* ELTDF ITEM SHOWCASE (Frappé Theme Component)                               */
+/* -------------------------------------------------------------------------- */
+.eltdf-item-showcase-holder {
+  position: relative;
+  width: 100%;
+}
+
+.eltdf-is-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #5a5a5a;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.eltdf-is-text {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px;
+  color: #8f8f8f;
+}

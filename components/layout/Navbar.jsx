@@ -73,6 +73,7 @@ const Navbar = () => {
   };
 
   const isAboutActive = pathname === '/about-us' || pathname === '/team';
+  const isAboutPage = pathname === '/about-us' || pathname === '/about';
   const isMenuActive = [
     '/savoury-selections',
     '/refreshing-beverages',
@@ -163,15 +164,16 @@ const Navbar = () => {
       {/* 1. MAIN HEADER CONTAINER (Sticky on scroll with seamless cut-off)     */}
       {/* -------------------------------------------------------------------- */}
       <header
-        className={`w-full z-50 transition-all duration-300 ${
-          isSticky
-            ? 'fixed top-0 left-0 bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)]'
-            : 'relative bg-white'
-        }`}
+        className={`w-full z-50 transition-all duration-300 ${isSticky
+            ? (isAboutPage
+              ? 'fixed top-0 left-0 bg-[#2BA863]/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.1)]'
+              : 'fixed top-0 left-0 bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)]')
+            : (isAboutPage ? 'relative bg-[#2BA863]' : 'relative bg-white')
+          }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between h-[85px] lg:h-[95px]">
-            
+
             {/* ---------------------------------------------------------------- */}
             {/* 2. BRAND LOGO (LEFT CORNER - Exact Frappé Alignment)            */}
             {/* ---------------------------------------------------------------- */}
@@ -192,23 +194,23 @@ const Navbar = () => {
             {/* 3. CENTER NAVIGATION (Frappé Start-to-End Dotted Underlines)     */}
             {/* ---------------------------------------------------------------- */}
             <nav className="hidden lg:flex items-center space-x-7 xl:space-x-9">
-              
+
               {/* Home Nav Item */}
               <div className="relative py-2 flex items-center group cursor-pointer">
                 <Link
                   href="/"
-                  className={`text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${
-                    isActive('/') ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                    
-                  }`}
+                  className={`text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${isActive('/')
+                      ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
+                      : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
+                    }`}
                 >
                   Home
                 </Link>
                 {/* FRAPPÉ START-TO-END DOTTED UNDERLINE */}
                 <span
-                  className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted border-[#23aa5d] origin-left transition-transform duration-300 ease-out pointer-events-none ${
-                    isActive('/') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                  }`}
+                  className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted origin-left transition-transform duration-300 ease-out pointer-events-none ${isAboutPage ? 'border-white' : 'border-[#23aa5d]'
+                    } ${isActive('/') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
                 />
               </div>
 
@@ -221,23 +223,27 @@ const Navbar = () => {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${
-                    isAboutActive ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                  }`}
+                  className={`flex items-center gap-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${isAboutActive
+                      ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
+                      : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
+                    }`}
                   onClick={() => setAboutDropdownOpen(prev => !prev)}
                 >
                   <span>About</span>
                   <ChevronDown
                     size={15}
-                    className={`transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-[#23aa5d]' : 'text-[#8f8f8f]'}`}
+                    className={`transition-transform duration-200 ${aboutDropdownOpen
+                        ? (isAboutPage ? 'rotate-180 text-white' : 'rotate-180 text-[#23aa5d]')
+                        : (isAboutPage ? 'text-white/80' : 'text-[#8f8f8f]')
+                      }`}
                   />
                 </button>
 
                 {/* FRAPPÉ START-TO-END DOTTED UNDERLINE */}
                 <span
-                  className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted border-[#23aa5d] origin-left transition-transform duration-300 ease-out pointer-events-none ${
-                    isAboutActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                  }`}
+                  className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted origin-left transition-transform duration-300 ease-out pointer-events-none ${isAboutPage ? 'border-white' : 'border-[#23aa5d]'
+                    } ${isAboutActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
                 />
 
                 {/* Dropdown Popup Menu */}
@@ -255,11 +261,10 @@ const Navbar = () => {
                           key={link.href}
                           href={link.href}
                           onClick={() => setAboutDropdownOpen(false)}
-                          className={`block px-4 py-2 text-[14px] transition-all duration-150 ${
-                            isActive(link.href)
+                          className={`block px-4 py-2 text-[14px] transition-all duration-150 ${isActive(link.href)
                               ? 'text-[#23aa5d] font-semibold bg-[#fbfaf7]'
                               : 'text-[#5a5a5a] hover:text-[#23aa5d] hover:bg-[#fbfaf7] hover:pl-5'
-                          }`}
+                            }`}
                         >
                           {link.label}
                         </Link>
@@ -278,23 +283,27 @@ const Navbar = () => {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${
-                    isMenuActive ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                  }`}
+                  className={`flex items-center gap-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${isMenuActive
+                      ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
+                      : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
+                    }`}
                   onClick={() => setMenuDropdownOpen(prev => !prev)}
                 >
                   <span>Menu</span>
                   <ChevronDown
                     size={15}
-                    className={`transition-transform duration-200 ${menuDropdownOpen ? 'rotate-180 text-[#23aa5d]' : 'text-[#8f8f8f]'}`}
+                    className={`transition-transform duration-200 ${menuDropdownOpen
+                        ? (isAboutPage ? 'rotate-180 text-white' : 'rotate-180 text-[#23aa5d]')
+                        : (isAboutPage ? 'text-white/80' : 'text-[#8f8f8f]')
+                      }`}
                   />
                 </button>
 
                 {/* FRAPPÉ START-TO-END DOTTED UNDERLINE */}
                 <span
-                  className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted border-[#23aa5d] origin-left transition-transform duration-300 ease-out pointer-events-none ${
-                    isMenuActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                  }`}
+                  className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted origin-left transition-transform duration-300 ease-out pointer-events-none ${isAboutPage ? 'border-white' : 'border-[#23aa5d]'
+                    } ${isMenuActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
                 />
 
                 {/* Dropdown Popup Menu */}
@@ -312,11 +321,10 @@ const Navbar = () => {
                           key={link.href}
                           href={link.href}
                           onClick={() => setMenuDropdownOpen(false)}
-                          className={`block px-4 py-2 text-[14px] transition-all duration-150 ${
-                            isActive(link.href)
+                          className={`block px-4 py-2 text-[14px] transition-all duration-150 ${isActive(link.href)
                               ? 'text-[#23aa5d] font-semibold bg-[#fbfaf7]'
                               : 'text-[#5a5a5a] hover:text-[#23aa5d] hover:bg-[#fbfaf7] hover:pl-5'
-                          }`}
+                            }`}
                         >
                           {link.label}
                         </Link>
@@ -334,17 +342,18 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className={`text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${
-                      isActive(item.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                    }`}
+                    className={`text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${isActive(item.href)
+                        ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
+                        : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
+                      }`}
                   >
                     {item.label}
                   </Link>
                   {/* FRAPPÉ START-TO-END DOTTED UNDERLINE */}
                   <span
-                    className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted border-[#23aa5d] origin-left transition-transform duration-300 ease-out pointer-events-none ${
-                      isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                    }`}
+                    className={`absolute -bottom-1 left-0 right-0 h-[2px] border-b-2 border-dotted origin-left transition-transform duration-300 ease-out pointer-events-none ${isAboutPage ? 'border-white' : 'border-[#23aa5d]'
+                      } ${isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
                   />
                 </div>
               ))}
@@ -359,7 +368,10 @@ const Navbar = () => {
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => router.push('/franchise')}
-                className="bg-[#23aa5d] hover:bg-[#1e9652] text-white px-6 py-2.5 rounded-[5px] text-[14px] font-semibold tracking-wider shadow-[0_4px_14px_rgba(35,170,93,0.35)] hover:shadow-[0_6px_20px_rgba(35,170,93,0.45)] transition-all duration-200 cursor-pointer"
+                className={`px-6 py-2.5 rounded-[5px] text-[14px] font-semibold tracking-wider transition-all duration-200 cursor-pointer ${isAboutPage
+                    ? 'bg-white text-[#2BA863] hover:bg-gray-100 shadow-[0_4px_14px_rgba(0,0,0,0.15)]'
+                    : 'bg-[#23aa5d] hover:bg-[#1e9652] text-white shadow-[0_4px_14px_rgba(35,170,93,0.35)] hover:shadow-[0_6px_20px_rgba(35,170,93,0.45)]'
+                  }`}
               >
                 Get Franchise
               </motion.button>
@@ -372,7 +384,8 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setIsOpen(true)}
-                className="p-2 text-[#5a5a5a] hover:text-[#23aa5d] focus:outline-none focus:ring-2 focus:ring-[#23aa5d]/20 rounded-md transition-colors"
+                className={`p-2 focus:outline-none rounded-md transition-colors ${isAboutPage ? 'text-white hover:text-white/80' : 'text-[#5a5a5a] hover:text-[#23aa5d]'
+                  }`}
                 aria-label="Open Navigation Menu"
               >
                 <Menu size={26} />
@@ -387,7 +400,8 @@ const Navbar = () => {
         {/* -------------------------------------------------------------------- */}
         <div className="absolute top-full -mt-[1px] left-0 w-full overflow-hidden leading-none z-30 pointer-events-none">
           <svg
-            className="w-full h-[16px] sm:h-[20px] md:h-[24px] fill-white block transform rotate-180"
+            className={`w-full h-[16px] sm:h-[20px] md:h-[24px] block transform rotate-180 ${isAboutPage ? 'fill-[#2BA863]' : 'fill-white'
+              }`}
             preserveAspectRatio="none"
             viewBox="0 0 1920 27"
           >
@@ -568,9 +582,8 @@ const Navbar = () => {
                   <Link
                     href="/"
                     onClick={handleCloseMenu}
-                    className={`block py-2 text-[16px] font-medium transition-colors ${
-                      isActive('/') ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                    }`}
+                    className={`block py-2 text-[16px] font-medium transition-colors ${isActive('/') ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
+                      }`}
                   >
                     Home
                   </Link>
@@ -580,9 +593,8 @@ const Navbar = () => {
                     <button
                       type="button"
                       onClick={() => setAboutDropdownOpen(prev => !prev)}
-                      className={`w-full flex items-center justify-between py-2 text-[16px] font-medium transition-colors ${
-                        isAboutActive ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                      }`}
+                      className={`w-full flex items-center justify-between py-2 text-[16px] font-medium transition-colors ${isAboutActive ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
+                        }`}
                     >
                       <span>About</span>
                       <ChevronDown
@@ -597,9 +609,8 @@ const Navbar = () => {
                             key={link.href}
                             href={link.href}
                             onClick={handleCloseMenu}
-                            className={`block py-1 text-[14px] ${
-                              isActive(link.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#8f8f8f]'
-                            }`}
+                            className={`block py-1 text-[14px] ${isActive(link.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#8f8f8f]'
+                              }`}
                           >
                             {link.label}
                           </Link>
@@ -613,9 +624,8 @@ const Navbar = () => {
                     <button
                       type="button"
                       onClick={() => setMenuDropdownOpen(prev => !prev)}
-                      className={`w-full flex items-center justify-between py-2 text-[16px] font-medium transition-colors ${
-                        isMenuActive ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                      }`}
+                      className={`w-full flex items-center justify-between py-2 text-[16px] font-medium transition-colors ${isMenuActive ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
+                        }`}
                     >
                       <span>Menu</span>
                       <ChevronDown
@@ -630,9 +640,8 @@ const Navbar = () => {
                             key={link.href}
                             href={link.href}
                             onClick={handleCloseMenu}
-                            className={`block py-1 text-[14px] ${
-                              isActive(link.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#8f8f8f]'
-                            }`}
+                            className={`block py-1 text-[14px] ${isActive(link.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#8f8f8f]'
+                              }`}
                           >
                             {link.label}
                           </Link>
@@ -647,9 +656,8 @@ const Navbar = () => {
                       key={link.href}
                       href={link.href}
                       onClick={handleCloseMenu}
-                      className={`block py-2 text-[16px] font-medium transition-colors ${
-                        isActive(link.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
-                      }`}
+                      className={`block py-2 text-[16px] font-medium transition-colors ${isActive(link.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#5a5a5a]'
+                        }`}
                     >
                       {link.label}
                     </Link>

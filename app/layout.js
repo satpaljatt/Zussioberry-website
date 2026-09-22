@@ -83,7 +83,7 @@
 
 
 
-import { Geist, Geist_Mono, Quicksand, Open_Sans, Dawning_of_a_New_Day } from "next/font/google";
+import { Geist, Geist_Mono, Quicksand, Open_Sans, Dawning_of_a_New_Day, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -122,6 +122,14 @@ const dawning = Dawning_of_a_New_Day({
   display: "swap",
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -141,7 +149,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${openSans.variable} ${dawning.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${openSans.variable} ${dawning.variable} ${cormorant.variable} antialiased`}>
 
         {/* ✅ Google Tag Manager */}
         <Script
