@@ -39,6 +39,18 @@ const navLinks = [
   { href: '/contact', label: 'Contact' }
 ];
 
+// Mobile Horizontal Navigation Links (Directly visible on mobile)
+const mobileNavLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about-us', label: 'About' },
+  { href: '/#menu', label: 'Menu', isMenu: true },
+  { href: '/franchise', label: 'Franchise' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/blogs', label: 'Blog' },
+  { href: '/career', label: 'Career' },
+  { href: '/contact', label: 'Contact' }
+];
+
 // About Dropdown Links
 const aboutPopupLinks = [
   { href: '/about-us', label: 'About Us' },
@@ -84,6 +96,14 @@ const Navbar = () => {
     '/our-products',
     '/menu'
   ].some(route => pathname.startsWith(route));
+
+  // Mobile Link Active Checker
+  const isMobileLinkActive = (item) => {
+    if (item.href === '/') return pathname === '/';
+    if (item.isMenu) return isMenuActive;
+    if (item.href === '/about-us') return isAboutActive;
+    return pathname.startsWith(item.href);
+  };
 
   // Phone & Email Trigger Handlers
   const phoneNumber = '+919270206096';
@@ -166,15 +186,15 @@ const Navbar = () => {
       {/* 1. MAIN HEADER CONTAINER (Sticky on scroll with seamless cut-off)     */}
       {/* -------------------------------------------------------------------- */}
       <header
-        className={`w-full z-50 transition-all duration-300 ${isSticky
+        className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${isSticky
             ? (isAboutPage
-              ? 'fixed top-0 left-0 bg-[#2BA863]/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.1)]'
-              : 'fixed top-0 left-0 bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)]')
-            : (isAboutPage ? 'relative bg-[#2BA863]' : 'relative bg-white')
+              ? 'bg-[#2BA863]/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.12)]'
+              : 'bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.08)]')
+            : (isAboutPage ? 'bg-[#2BA863]' : 'bg-white')
           }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-between h-[85px] lg:h-[95px]">
+          <div className="flex items-center justify-between h-[65px] sm:h-[75px] lg:h-[95px]">
 
             {/* ---------------------------------------------------------------- */}
             {/* 2. BRAND LOGO (LEFT CORNER - Exact Frappé Alignment)            */}
@@ -408,9 +428,19 @@ const Navbar = () => {
             </div>
 
             {/* ---------------------------------------------------------------- */}
-            {/* 5. MOBILE HAMBURGER BUTTON (Responsive trigger)                  */}
+            {/* 5. MOBILE ACTIONS (Franchise Button + Hamburger)                 */}
             {/* ---------------------------------------------------------------- */}
-            <div className="flex lg:hidden items-center">
+            <div className="flex lg:hidden items-center space-x-2">
+              <button
+                type="button"
+                onClick={() => router.push('/franchise')}
+                className={`px-3 py-1.5 rounded-[5px] text-[12px] font-semibold tracking-wider transition-all duration-200 cursor-pointer ${isAboutPage
+                    ? 'bg-white text-[#2BA863] shadow-sm'
+                    : 'bg-[#23aa5d] text-white shadow-[0_2px_8px_rgba(35,170,93,0.3)]'
+                  }`}
+              >
+                Franchise
+              </button>
               <button
                 type="button"
                 onClick={() => setIsOpen(true)}
@@ -418,10 +448,48 @@ const Navbar = () => {
                   }`}
                 aria-label="Open Navigation Menu"
               >
-                <Menu size={26} />
+                <Menu size={24} />
               </button>
             </div>
 
+          </div>
+
+          {/* ---------------------------------------------------------------- */}
+          {/* 5b. MOBILE NAVIGATION LINKS (Fully responsive 4-col x 2-row grid) */}
+          {/* ---------------------------------------------------------------- */}
+          <div className={`lg:hidden border-t py-2 px-2 sm:px-4 ${isAboutPage ? 'border-white/20' : 'border-gray-100'}`}>
+            <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+              {mobileNavLinks.map((item) => {
+                const active = isMobileLinkActive(item);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.href.startsWith('/#') && pathname === '/') {
+                        e.preventDefault();
+                        const id = item.href.replace('/#', '');
+                        const el = document.getElementById(id);
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }
+                    }}
+                    className={`py-1.5 px-1 text-center rounded-[6px] text-[12px] sm:text-[13px] font-medium transition-all flex items-center justify-center ${
+                      isAboutPage
+                        ? (active
+                            ? 'bg-white text-[#2BA863] font-bold shadow-sm'
+                            : 'text-white/90 hover:text-white bg-white/10 hover:bg-white/20')
+                        : (active
+                            ? 'bg-[#23aa5d] text-white font-semibold shadow-sm'
+                            : 'text-[#5a5a5a] hover:text-[#23aa5d] bg-[#f5f5f5] hover:bg-gray-200/80')
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
 
