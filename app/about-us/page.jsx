@@ -481,11 +481,10 @@ export default function AboutPage() {
       </section>
 
       {/* ══════════════════════════════════════
-          3. STATS BANNER  (green + wavy edges)
+          3. STATS BANNER  (bg-[#abe9b0] + wavy edges)
       ══════════════════════════════════════ */}
       <section
-        className="relative py-28 px-4 text-white text-center overflow-hidden"
-        style={{ background: "linear-gradient(135deg,#2ecc7a 0%,#23aa5d 100%)" }}
+        className="relative py-28 px-4 text-white text-center overflow-hidden bg-[#abe9b0]"
       >
         <WavyTop color="#ffffff" />
 
