@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { IoIosArrowForward } from "react-icons/io";
+import RawMenu from "@/components/sections/RawMenu";
 
 const MenuPage = () => {
   const juices = [
@@ -32,6 +33,9 @@ const MenuPage = () => {
           </p>
         </div>
       </section>
+
+      {/* Featured Signature Raw Menu Section */}
+      <RawMenu />
 
       {/* Menu Content */}
       <div className="bg-white min-h-screen overflow-hidden">

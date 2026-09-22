@@ -66,7 +66,7 @@ const menuCol2 = [
 
 export default function RawMenu() {
   return (
-    <section className="relative w-full bg-[#abe9b0] pt-[115px] pb-[125px] md:pt-[135px] md:pb-[145px] overflow-hidden">
+    <section id="menu" className="relative w-full bg-[#abe9b0] pt-[115px] pb-[125px] md:pt-[135px] md:pb-[145px] overflow-hidden scroll-mt-20">
       {/* 1. Top Torn Paper Cutout Edge */}
       <div className="absolute top-0 left-0 w-full z-20 pointer-events-none select-none">
         <Image

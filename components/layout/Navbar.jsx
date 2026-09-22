@@ -47,6 +47,8 @@ const aboutPopupLinks = [
 
 // Menu / Products Dropdown Links
 const productsPopupLinks = [
+  { href: '/#menu', label: 'Raw Menu (Smoothies & Juices)' },
+  { href: '/menu', label: 'Full Menu' },
   { href: '/savoury-selections', label: 'Savoury Selections' },
   { href: '/refreshing-beverages', label: 'Refreshing Beverages' },
   { href: '/trendy-brews', label: 'Trendy Brews' },
@@ -275,29 +277,47 @@ const Navbar = () => {
               </div>
 
               {/* Menu Dropdown (Savoury, Beverages, Brews, Frozen) */}
+              {/* Menu Dropdown (Savoury, Beverages, Brews, Frozen, Raw Menu) */}
               <div
                 ref={menuDropdownRef}
                 className="relative py-2 group flex items-center cursor-pointer"
                 onMouseEnter={() => setMenuDropdownOpen(true)}
                 onMouseLeave={() => setMenuDropdownOpen(false)}
               >
-                <button
-                  type="button"
+                <Link
+                  href="/#menu"
+                  onClick={(e) => {
+                    if (pathname === '/') {
+                      e.preventDefault();
+                      const el = document.getElementById('menu');
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }}
                   className={`flex items-center gap-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${isMenuActive
                       ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
                       : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
                     }`}
-                  onClick={() => setMenuDropdownOpen(prev => !prev)}
                 >
                   <span>Menu</span>
-                  <ChevronDown
-                    size={15}
-                    className={`transition-transform duration-200 ${menuDropdownOpen
-                        ? (isAboutPage ? 'rotate-180 text-white' : 'rotate-180 text-[#23aa5d]')
-                        : (isAboutPage ? 'text-white/80' : 'text-[#8f8f8f]')
-                      }`}
-                  />
-                </button>
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setMenuDropdownOpen(prev => !prev);
+                    }}
+                    className="p-0.5 hover:opacity-80 inline-flex items-center"
+                  >
+                    <ChevronDown
+                      size={15}
+                      className={`transition-transform duration-200 ${menuDropdownOpen
+                          ? (isAboutPage ? 'rotate-180 text-white' : 'rotate-180 text-[#23aa5d]')
+                          : (isAboutPage ? 'text-white/80' : 'text-[#8f8f8f]')
+                        }`}
+                    />
+                  </span>
+                </Link>
 
                 {/* FRAPPÉ START-TO-END DOTTED UNDERLINE */}
                 <span
@@ -314,13 +334,23 @@ const Navbar = () => {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute left-0 top-full mt-2 w-56 bg-white border border-[#eaeaea] rounded-[5px] shadow-[0_10px_30px_rgba(0,0,0,0.08)] py-2 z-50"
+                      className="absolute left-0 top-full mt-2 w-64 bg-white border border-[#eaeaea] rounded-[5px] shadow-[0_10px_30px_rgba(0,0,0,0.08)] py-2 z-50"
                     >
                       {productsPopupLinks.map(link => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          onClick={() => setMenuDropdownOpen(false)}
+                          onClick={(e) => {
+                            setMenuDropdownOpen(false);
+                            if (link.href.startsWith('/#') && pathname === '/') {
+                              e.preventDefault();
+                              const id = link.href.replace('/#', '');
+                              const el = document.getElementById(id);
+                              if (el) {
+                                el.scrollIntoView({ behavior: 'smooth' });
+                              }
+                            }
+                          }}
                           className={`block px-4 py-2 text-[14px] transition-all duration-150 ${isActive(link.href)
                               ? 'text-[#23aa5d] font-semibold bg-[#fbfaf7]'
                               : 'text-[#5a5a5a] hover:text-[#23aa5d] hover:bg-[#fbfaf7] hover:pl-5'
@@ -639,7 +669,17 @@ const Navbar = () => {
                           <Link
                             key={link.href}
                             href={link.href}
-                            onClick={handleCloseMenu}
+                            onClick={(e) => {
+                              handleCloseMenu();
+                              if (link.href.startsWith('/#') && pathname === '/') {
+                                e.preventDefault();
+                                const id = link.href.replace('/#', '');
+                                const el = document.getElementById(id);
+                                if (el) {
+                                  el.scrollIntoView({ behavior: 'smooth' });
+                                }
+                              }
+                            }}
                             className={`block py-1 text-[14px] ${isActive(link.href) ? 'text-[#23aa5d] font-semibold' : 'text-[#8f8f8f]'
                               }`}
                           >
