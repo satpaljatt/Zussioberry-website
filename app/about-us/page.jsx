@@ -347,13 +347,19 @@ export default function AboutPage() {
                   style={{ opacity: 1 }}
                 >
                   {/* Left items holder */}
-                  <div className="eltdf-is-item-holder eltdf-is-left-holder order-2 md:order-1 space-y-10 md:space-y-14 text-center md:text-right">
+                  <div className="eltdf-is-item-holder eltdf-is-left-holder order-1 md:order-1 space-y-10 md:space-y-12 text-center md:text-right">
                     <div className="eltdf-is-item eltdf-is-left eltdf-appeared">
                       <div className="eltdf-is-content">
-                        <h3 className="eltdf-is-title" style={{ color: "#5a5a5a" }}>
+                        <h3
+                          className="eltdf-is-title text-lg font-semibold text-gray-700 mb-2"
+                          style={{ fontFamily: "var(--font-quicksand), 'Quicksand', sans-serif" }}
+                        >
                           Jump For Juice
                         </h3>
-                        <p className="eltdf-is-text">
+                        <p
+                          className="eltdf-is-text text-sm text-gray-400 leading-relaxed"
+                          style={{ fontFamily: "var(--font-open-sans), 'Open Sans', sans-serif" }}
+                        >
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
                         </p>
                       </div>
@@ -361,10 +367,16 @@ export default function AboutPage() {
 
                     <div className="eltdf-is-item eltdf-is-left eltdf-appeared">
                       <div className="eltdf-is-content">
-                        <h3 className="eltdf-is-title" style={{ color: "#5a5a5a" }}>
+                        <h3
+                          className="eltdf-is-title text-lg font-semibold text-gray-700 mb-2"
+                          style={{ fontFamily: "var(--font-quicksand), 'Quicksand', sans-serif" }}
+                        >
                           Smootheory
                         </h3>
-                        <p className="eltdf-is-text">
+                        <p
+                          className="eltdf-is-text text-sm text-gray-400 leading-relaxed"
+                          style={{ fontFamily: "var(--font-open-sans), 'Open Sans', sans-serif" }}
+                        >
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
                         </p>
                       </div>
@@ -372,46 +384,16 @@ export default function AboutPage() {
 
                     <div className="eltdf-is-item eltdf-is-left eltdf-appeared">
                       <div className="eltdf-is-content">
-                        <h3 className="eltdf-is-title" style={{ color: "#5a5a5a" }}>
+                        <h3
+                          className="eltdf-is-title text-lg font-semibold text-gray-700 mb-2"
+                          style={{ fontFamily: "var(--font-quicksand), 'Quicksand', sans-serif" }}
+                        >
                           Smoothie Dreams
                         </h3>
-                        <p className="eltdf-is-text">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right items holder */}
-                  <div className="eltdf-is-item-holder eltdf-is-right-holder order-3 md:order-3 space-y-10 md:space-y-14 text-center md:text-left">
-                    <div className="eltdf-is-item eltdf-is-right eltdf-appeared">
-                      <div className="eltdf-is-content">
-                        <h3 className="eltdf-is-title" style={{ color: "#5a5a5a" }}>
-                          The Joyful
-                        </h3>
-                        <p className="eltdf-is-text">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="eltdf-is-item eltdf-is-right eltdf-appeared">
-                      <div className="eltdf-is-content">
-                        <h3 className="eltdf-is-title" style={{ color: "#5a5a5a" }}>
-                          Rainbow Smoothies
-                        </h3>
-                        <p className="eltdf-is-text">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="eltdf-is-item eltdf-is-right eltdf-appeared">
-                      <div className="eltdf-is-content">
-                        <h3 className="eltdf-is-title" style={{ color: "#5a5a5a" }}>
-                          Frozen Fruit
-                        </h3>
-                        <p className="eltdf-is-text">
+                        <p
+                          className="eltdf-is-text text-sm text-gray-400 leading-relaxed"
+                          style={{ fontFamily: "var(--font-open-sans), 'Open Sans', sans-serif" }}
+                        >
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
                         </p>
                       </div>
@@ -420,7 +402,7 @@ export default function AboutPage() {
 
                   {/* Center showcase image */}
                   <div
-                    className="eltdf-is-image eltdf-appeared order-1 md:order-2 flex justify-center my-6 md:my-0"
+                    className="eltdf-is-image eltdf-appeared order-2 md:order-2 flex justify-center my-6 md:my-0"
                     style={{ marginTop: "-20px" }}
                   >
                     <div className="relative w-56 md:w-72 lg:w-80 transition-transform duration-500 hover:scale-105">
@@ -435,6 +417,60 @@ export default function AboutPage() {
                         srcSet="https://frappe.qodeinteractive.com/wp-content/uploads/2018/04/h3-img-3.png 600w, https://frappe.qodeinteractive.com/wp-content/uploads/2018/04/h3-img-3-236x300.png 236w"
                         sizes="(max-width: 600px) 100vw, 600px"
                       />
+                    </div>
+                  </div>
+
+                  {/* Right items holder */}
+                  <div className="eltdf-is-item-holder eltdf-is-right-holder order-3 md:order-3 space-y-10 md:space-y-12 text-center md:text-left">
+                    <div className="eltdf-is-item eltdf-is-right eltdf-appeared">
+                      <div className="eltdf-is-content">
+                        <h3
+                          className="eltdf-is-title text-lg font-semibold text-gray-700 mb-2"
+                          style={{ fontFamily: "var(--font-quicksand), 'Quicksand', sans-serif" }}
+                        >
+                          The Joyful
+                        </h3>
+                        <p
+                          className="eltdf-is-text text-sm text-gray-400 leading-relaxed"
+                          style={{ fontFamily: "var(--font-open-sans), 'Open Sans', sans-serif" }}
+                        >
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="eltdf-is-item eltdf-is-right eltdf-appeared">
+                      <div className="eltdf-is-content">
+                        <h3
+                          className="eltdf-is-title text-lg font-semibold text-gray-700 mb-2"
+                          style={{ fontFamily: "var(--font-quicksand), 'Quicksand', sans-serif" }}
+                        >
+                          Rainbow Smoothies
+                        </h3>
+                        <p
+                          className="eltdf-is-text text-sm text-gray-400 leading-relaxed"
+                          style={{ fontFamily: "var(--font-open-sans), 'Open Sans', sans-serif" }}
+                        >
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="eltdf-is-item eltdf-is-right eltdf-appeared">
+                      <div className="eltdf-is-content">
+                        <h3
+                          className="eltdf-is-title text-lg font-semibold text-gray-700 mb-2"
+                          style={{ fontFamily: "var(--font-quicksand), 'Quicksand', sans-serif" }}
+                        >
+                          Frozen Fruit
+                        </h3>
+                        <p
+                          className="eltdf-is-text text-sm text-gray-400 leading-relaxed"
+                          style={{ fontFamily: "var(--font-open-sans), 'Open Sans', sans-serif" }}
+                        >
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dui ante, consectetur non scelerisque.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
