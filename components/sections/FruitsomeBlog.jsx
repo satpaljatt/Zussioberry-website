@@ -1,7 +1,9 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const blogPosts = [
   {
@@ -41,11 +43,41 @@ const blogPosts = [
 
 export default function FruitsomeBlog() {
   return (
-    <section className="relative w-full bg-white pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative w-full bg-[#FFF64F] pt-20 md:pt-28 pb-0 overflow-hidden">
+      {/* Floating Fruit Particle (Left) */}
+      <motion.div
+        animate={{ y: [0, -14, 0], rotate: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-20 -left-6 sm:left-4 lg:left-8 w-[60px] sm:w-[85px] z-20 pointer-events-none select-none drop-shadow-md"
+      >
+        <Image
+          src="/assets/decorations/raspberry-corner.png"
+          alt="Floating raspberry"
+          width={90}
+          height={90}
+          className="w-full h-auto object-contain mix-blend-multiply"
+        />
+      </motion.div>
+
+      {/* Floating Leaf Particle (Right) */}
+      <motion.div
+        animate={{ y: [0, 14, 0], rotate: [0, -12, 0] }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+        className="absolute top-36 -right-4 sm:right-6 lg:right-10 w-[55px] sm:w-[75px] z-20 pointer-events-none select-none drop-shadow-md"
+      >
+        <Image
+          src="/assets/home/raw-menu/floating-leaf.png"
+          alt="Floating leaf"
+          width={80}
+          height={100}
+          className="w-full h-auto object-contain"
+        />
+      </motion.div>
+
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-16 md:mb-24">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          {/* Top Heart Accent (Frappé Authentic Painted Heart) */}
+          {/* Top Heart Accent */}
           <div className="flex justify-center mb-3">
             <Image
               src="/assets/home/smoothies/heart-image.png"
@@ -57,30 +89,37 @@ export default function FruitsomeBlog() {
             />
           </div>
 
-          {/* Section Main Title (Frappé Quicksand Light 47px) */}
+          {/* Section Main Title */}
           <h2
             style={{ fontFamily: "'Quicksand', sans-serif" }}
-            className="text-[34px] sm:text-[42px] md:text-[47px] font-[300] text-[#5a5a5a] tracking-[0.01em] leading-[1.2em] mb-1"
+            className="text-[34px] sm:text-[44px] md:text-[50px] font-bold text-[#222222] tracking-tight leading-[1.15] mb-2 drop-shadow-xs"
           >
             Our Fruitsome Blog
           </h2>
 
-          {/* Cursive Subtitle (Frappé Dawning of a New Day 30px) */}
-          <p
+          {/* Bouncing Cursive Subtitle */}
+          <motion.p
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
             style={{ fontFamily: "'Dawning of a New Day', cursive" }}
-            className="text-[26px] sm:text-[30px] md:text-[32px] font-normal text-[#a4a4a4] leading-[1.3em] tracking-[0.02em]"
+            className="text-[28px] sm:text-[34px] md:text-[38px] font-normal text-[#5a5000] leading-[1.3em] tracking-[0.02em]"
           >
-            Smoothie demo designed for you
-          </p>
+            Rise &amp; Energize with fresh reads
+          </motion.p>
         </div>
 
         {/* 3-Column Blog Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8">
           {blogPosts.map((post) => (
-            <article key={post.id} className="group flex flex-col text-left">
-              {/* Outer Wrapper for Image & Overhanging Ribbon */}
-              <div className="relative w-full aspect-square">
-                {/* Authentic Frappé Date Ribbon Tag (Aligned to Start / Left edge of Image) */}
+            <motion.article
+              key={post.id}
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="group flex flex-col bg-gradient-to-b from-[#FFF5F9] via-[#FFE5F0] to-[#FFD3E6] rounded-[24px] p-5 shadow-[0_14px_35px_rgba(255,103,154,0.22)] border-2 border-white hover:shadow-[0_22px_50px_rgba(255,103,154,0.38)] transition-all duration-300 text-left"
+            >
+              {/* Outer Wrapper for Image & Ribbon */}
+              <div className="relative w-full aspect-square overflow-hidden rounded-[18px] shadow-sm">
+                {/* Authentic Date Ribbon Tag */}
                 <div
                   style={{
                     fontFamily: "'Open Sans', sans-serif",
@@ -89,40 +128,40 @@ export default function FruitsomeBlog() {
                     WebkitClipPath:
                       "polygon(0 0, 100% 0, 86% 50%, 100% 100%, 0 100%)",
                   }}
-                  className="absolute top-[18px] md:top-[20px] left-0 bg-[#abe9b0] text-white text-[13px] md:text-[13.5px] font-[400] py-[4px] md:py-[5px] pl-[18px] md:pl-[20px] pr-[28px] md:pr-[30px] z-20 pointer-events-none select-none tracking-normal shadow-sm whitespace-nowrap text-left"
+                  className="absolute top-[16px] left-0 bg-[#23aa5d] text-white text-[12px] sm:text-[13px] font-semibold py-[4px] pl-[16px] pr-[26px] z-20 pointer-events-none select-none tracking-normal shadow-md whitespace-nowrap"
                 >
                   {post.date}
                 </div>
 
-                {/* Inner Image Container with Rounded Corners & Hover Zoom */}
+                {/* Inner Image Container with Hover Zoom */}
                 <Link
                   href={`/blogs/${post.slug}`}
-                  className="relative w-full h-full overflow-hidden rounded-[4px] bg-[#fbfaf7] block shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
+                  className="relative w-full h-full block bg-white"
                 >
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    className="object-cover transition-transform duration-600 ease-out group-hover:scale-110"
                   />
                 </Link>
               </div>
 
               {/* Text Info Below Image */}
-              <div className="pt-5 pb-2 flex flex-col flex-1 justify-between">
+              <div className="pt-5 pb-1 flex flex-col flex-1 justify-between">
                 <div>
                   <Link href={`/blogs/${post.slug}`}>
                     <h3
                       style={{ fontFamily: "'Quicksand', sans-serif" }}
-                      className="text-[20px] md:text-[21px] font-[600] text-[#5a5a5a] transition-colors duration-200 group-hover:text-[#23aa5d] leading-[1.35em] mb-2.5 line-clamp-2"
+                      className="text-[19px] md:text-[20px] font-bold text-[#1f2937] transition-colors duration-200 group-hover:text-[#e02e6d] leading-[1.35em] mb-2.5 line-clamp-2"
                     >
                       {post.title}
                     </h3>
                   </Link>
                   <p
                     style={{ fontFamily: "'Open Sans', sans-serif" }}
-                    className="text-[#8f8f8f] text-[13.5px] md:text-[14px] font-[300] leading-[23px] line-clamp-3 mb-4"
+                    className="text-[#4b5563] text-[13.5px] md:text-[14px] font-normal leading-[23px] line-clamp-3 mb-4"
                   >
                     {post.description}
                   </p>
@@ -131,27 +170,43 @@ export default function FruitsomeBlog() {
                 {/* Footer Meta */}
                 <div
                   style={{ fontFamily: "'Open Sans', sans-serif" }}
-                  className="flex items-center gap-1 text-[12px] font-[300] text-[#a4a4a4] pt-3 border-t border-gray-100"
+                  className="flex items-center gap-1.5 text-[12.5px] font-medium text-[#6b7280] pt-3.5 border-t border-[#f4c2d7]/70"
                 >
                   <span>By</span>
                   <Link
                     href={`/blogs/${post.slug}`}
-                    className="text-[#5a5a5a] hover:text-[#23aa5d] font-[400] transition-colors"
+                    className="text-[#1f2937] hover:text-[#e02e6d] font-semibold transition-colors"
                   >
                     {post.author}
                   </Link>
-                  <span className="mx-1">/</span>
+                  <span className="mx-1 text-[#e0a9c2]">/</span>
                   <Link
                     href="/blogs"
-                    className="text-[#5a5a5a] hover:text-[#23aa5d] font-[400] transition-colors"
+                    className="text-[#23aa5d] font-bold transition-colors hover:underline"
                   >
                     {post.category}
                   </Link>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
+      </div>
+
+      {/* Wave Transition into Dark Footer-matching Review Section (#0b1c0e) */}
+      <div className="w-full overflow-hidden leading-none block -mb-[1px]">
+        <svg
+          viewBox="0 0 1440 90"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-[45px] sm:h-[65px] md:h-[90px] block"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,35 C320,95 680,-10 1020,55 C1240,95 1380,30 1440,40 L1440,90 L0,90 Z"
+            fill="#0b1c0e"
+          />
+        </svg>
       </div>
     </section>
   );

@@ -66,30 +66,7 @@ const menuCol2 = [
 
 export default function RawMenu() {
   return (
-    <section id="menu" className="relative w-full bg-[#abe9b0] pt-[115px] pb-[125px] md:pt-[135px] md:pb-[145px] overflow-hidden scroll-mt-20">
-      {/* 1. Top Torn Paper Cutout Edge */}
-      <div className="absolute top-0 left-0 w-full z-20 pointer-events-none select-none">
-        <Image
-          src="/assets/home/raw-menu/torn-paper-top.png"
-          alt="Top torn edge"
-          width={1920}
-          height={37}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
-
-      {/* 2. Bottom Torn Paper Cutout Edge */}
-      <div className="absolute bottom-0 left-0 w-full z-20 pointer-events-none select-none">
-        <Image
-          src="/assets/home/raw-menu/torn-paper-bottom.png"
-          alt="Bottom torn edge"
-          width={1920}
-          height={37}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
+    <section id="menu" className="relative w-full bg-[#abe9b0] pt-12 pb-0 overflow-hidden scroll-mt-20">
 
       {/* 3. Top-Left "100% RAW INGREDIENTS" Ribbon & Seeds Badge */}
       <div className="absolute top-[-5px] left-[-10px] sm:top-[5px] sm:left-[5px] lg:top-[15px] lg:left-[20px] w-[180px] sm:w-[240px] lg:w-[290px] z-10 pointer-events-none select-none">
@@ -325,6 +302,22 @@ export default function RawMenu() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Wave Transition into Berry Pink (#FF679A) */}
+      <div className="w-full overflow-hidden leading-none block -mb-[1px] mt-16 md:mt-24">
+        <svg
+          viewBox="0 0 1440 90"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-[45px] sm:h-[65px] md:h-[90px] block"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,35 C320,90 680,-15 1020,55 C1240,95 1380,30 1440,40 L1440,90 L0,90 Z"
+            fill="#FF679A"
+          />
+        </svg>
       </div>
     </section>
   );

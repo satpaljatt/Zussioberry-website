@@ -4,6 +4,7 @@ import MakeOrder from "@/components/sections/MakeOrder";
 import NatureGoodness from "@/components/sections/NatureGoodness";
 import Slider from "@/components/sections/Slider";
 import SmoothiesAndJuices from "@/components/sections/SmoothiesAndJuices";
+import SummerBreezeBanner from "@/components/sections/SummerBreezeBanner";
 import TheySay from "@/components/sections/TheySay";
 import RawMenu from "@/components/sections/RawMenu";
 import FruitsomeBlog from "@/components/sections/FruitsomeBlog";
@@ -23,9 +24,10 @@ export default function Home() {
    <>
    <Slider/>
    <SmoothiesAndJuices/>
-   <TheySay/>
    <RawMenu/>
+   <SummerBreezeBanner/>
    <FruitsomeBlog/>
+   <TheySay/>
    {/* <WelcomeTo/> */}
    {/* <WhyChoose /> */}
    {/* <FranchiseModel /> */}
