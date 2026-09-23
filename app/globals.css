@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dawning+of+a+New+Day&family=Fredoka:wght@500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Patrick+Hand&family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* -------------------------------------------------------------------------- */
@@ -110,4 +110,187 @@ body {
   font-weight: 400;
   line-height: 1.625; /* leading-relaxed */
   color: #9ca3af; /* text-gray-400 */
+}
+
+/* Custom Blink & Transition Animations */
+@keyframes categoryBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 rgba(35, 170, 93, 0);
+  }
+  25%, 75% {
+    opacity: 0.35;
+    transform: scale(0.96);
+    box-shadow: 0 0 16px rgba(35, 170, 93, 0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+    box-shadow: 0 0 28px rgba(35, 170, 93, 1);
+  }
+}
+
+.animate-category-blink {
+  animation: categoryBlink 0.75s ease-in-out;
+}
+
+/* ------------------------------------------------------------- */
+/* BLUE COLOR BLINK ANIMATIONS (User Requested: "blink in blue color") */
+/* ------------------------------------------------------------- */
+
+/* Blue Word / Text Blink */
+@keyframes blueWordBlink {
+  0% {
+    color: #ffffff;
+    text-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    transform: scale(1);
+  }
+  15% {
+    color: #1d4ed8; /* Deep Electric Blue */
+    opacity: 0.12;
+    transform: scale(0.95);
+    text-shadow: 0 0 15px #2563eb;
+  }
+  30% {
+    color: #60a5fa; /* Neon Bright Blue */
+    opacity: 1;
+    transform: scale(1.1);
+    text-shadow: 0 0 20px #3b82f6, 0 0 35px #2563eb, 0 0 50px #60a5fa;
+  }
+  45% {
+    color: #1d4ed8;
+    opacity: 0.12;
+    transform: scale(0.95);
+    text-shadow: 0 0 15px #2563eb;
+  }
+  60% {
+    color: #38bdf8; /* Vibrant Cyan Sky Blue */
+    opacity: 1;
+    transform: scale(1.06);
+    text-shadow: 0 0 25px #3b82f6, 0 0 45px #2563eb;
+  }
+  75% {
+    color: #1e40af;
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  100% {
+    color: #60a5fa;
+    opacity: 1;
+    text-shadow: 0 0 16px #3b82f6;
+    transform: scale(1);
+  }
+}
+
+.animate-blue-word-blink {
+  animation: blueWordBlink 0.6s ease-in-out forwards !important;
+}
+
+/* Blue Card & Outline Glow Blink */
+@keyframes blueCardBlink {
+  0% {
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    transform: scale(1);
+  }
+  15% {
+    opacity: 0.18;
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.4);
+    transform: scale(0.97);
+  }
+  30% {
+    opacity: 1;
+    box-shadow: 0 0 35px rgba(59, 130, 246, 1), 0 0 70px rgba(37, 99, 235, 0.9);
+    transform: scale(1.03);
+  }
+  45% {
+    opacity: 0.18;
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.4);
+    transform: scale(0.97);
+  }
+  60% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.95), 0 0 60px rgba(37, 99, 235, 0.8);
+    transform: scale(1.02);
+  }
+  75% {
+    opacity: 0.4;
+    transform: scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 22px rgba(59, 130, 246, 0.7);
+    transform: scale(1);
+  }
+}
+
+.animate-blue-card-blink {
+  animation: blueCardBlink 0.6s ease-in-out forwards !important;
+}
+
+/* Blue Category Button Blink */
+@keyframes blueButtonBlink {
+  0% {
+    background-color: #2563eb;
+    color: #ffffff;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(37, 99, 235, 0);
+  }
+  15% {
+    opacity: 0.15;
+    transform: scale(0.92);
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+  }
+  30% {
+    background-color: #3b82f6;
+    color: #ffffff;
+    opacity: 1;
+    transform: scale(1.12);
+    box-shadow: 0 0 25px #2563eb, 0 0 45px #60a5fa;
+  }
+  45% {
+    opacity: 0.15;
+    transform: scale(0.94);
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+  }
+  60% {
+    background-color: #1d4ed8;
+    color: #93c5fd;
+    opacity: 1;
+    transform: scale(1.06);
+    box-shadow: 0 0 20px #2563eb;
+  }
+  75% {
+    opacity: 0.4;
+  }
+  100% {
+    background-color: #2563eb;
+    color: #ffffff;
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(37, 99, 235, 0.85);
+  }
+}
+
+.animate-blue-button-blink {
+  animation: blueButtonBlink 0.6s ease-in-out forwards !important;
+}
+
+@keyframes gridBlinkFade {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.98) translateY(6px);
+  }
+  40% {
+    opacity: 0.55;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-grid-blink {
+  animation: gridBlinkFade 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }

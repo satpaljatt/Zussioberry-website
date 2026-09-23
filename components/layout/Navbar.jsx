@@ -59,8 +59,6 @@ const aboutPopupLinks = [
 
 // Menu / Products Dropdown Links
 const productsPopupLinks = [
-  { href: '/#menu', label: 'Raw Menu (Smoothies & Juices)' },
-  { href: '/menu', label: 'Full Menu' },
   { href: '/savoury-selections', label: 'Savoury Selections' },
   { href: '/refreshing-beverages', label: 'Refreshing Beverages' },
   { href: '/trendy-brews', label: 'Trendy Brews' },
