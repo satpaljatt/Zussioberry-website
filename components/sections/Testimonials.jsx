@@ -169,28 +169,31 @@ const Testimonials = () => {
 
   return (
     <motion.div 
-      className="text-center z-10 relative px-4 sm:px-6 py-12 mb-10"
+      className="text-center z-10 relative px-4 sm:px-6 py-16 bg-[#160a26] text-white overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={containerVariants}
     >
+      {/* Ambient Royal Berry & Purple Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,_rgba(192,38,211,0.18),_transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,_rgba(225,29,72,0.12),_transparent_60%)] pointer-events-none" />
       
       {/* Main Heading */}
       <motion.div 
-        className="mb-12"
+        className="mb-12 relative z-10"
         variants={itemVariants}
       >
-        <h3 className="text-3xl xs:text-3xl md:text-5xl font-[heading-1]">
-          What Our <span className="text-[#23aa5d]">Customers Say</span>
+        <h3 className="text-3xl xs:text-3xl md:text-5xl font-[heading-1] text-white">
+          What Our <span className="text-[#e879f9]">Customers Say</span>
         </h3>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto font-[para]">
+        <p className="text-purple-200/80 mt-4 max-w-2xl mx-auto font-[para] text-sm md:text-base">
           Hear from our valued customers about their Zussioberry experience
         </p>
       </motion.div>
 
       {/* Carousel Container */}
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Desktop: Carousel with 3 cards */}
         <div className="hidden sm:block">
@@ -212,14 +215,14 @@ const Testimonials = () => {
                   variants={cardVariants}
                   whileHover="hover"
                 >
-                  <div className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full mx-1 flex flex-col">
+                  <div className="bg-[#24123a]/90 backdrop-blur-md border border-[#4a2268] hover:border-[#c026d3]/60 p-6 rounded-2xl shadow-xl hover:shadow-[0_12px_35px_rgba(192,38,211,0.25)] transition-all duration-300 h-full mx-1 flex flex-col text-left">
                     <StarRating rating={testimonial.rating} />
-                    <p className="text-gray-600 font-[para] text-sm leading-relaxed mb-4 text-left flex-grow">
+                    <p className="text-purple-100/90 font-[para] text-sm leading-relaxed mb-4 text-left flex-grow italic">
                       "{testimonial.content}"
                     </p>
-                    <div className="text-left mt-auto">
-                      <h5 className="font-[heading-2] font-bold text-gray-800">{testimonial.name}</h5>
-                      <p className="text-[#23aa5d] text-sm font-[para]">{testimonial.position}</p>
+                    <div className="text-left mt-auto pt-3 border-t border-[#4a2268]">
+                      <h5 className="font-[heading-2] font-bold text-white text-base">{testimonial.name}</h5>
+                      <p className="text-[#e879f9] text-sm font-medium font-[para]">{testimonial.position}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -231,12 +234,12 @@ const Testimonials = () => {
           <div className="flex justify-center items-center gap-6 mt-8">
             <motion.button 
               onClick={handlePrev}
-              className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200 z-10 shadow-md"
+              className="p-3 rounded-full bg-[#2a1444] hover:bg-[#c026d3] border border-[#522573] text-purple-100 hover:text-white transition-colors duration-200 z-10 shadow-lg cursor-pointer"
               aria-label="Previous testimonials"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </motion.button>
@@ -247,13 +250,13 @@ const Testimonials = () => {
                 <motion.button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-[#23aa5d]' : 'bg-gray-300 hover:bg-gray-400'
+                  className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+                    index === currentIndex ? 'bg-gradient-to-r from-[#e879f9] to-[#c026d3] w-6 shadow-[0_0_12px_rgba(232,121,249,0.7)]' : 'bg-purple-400/30 hover:bg-purple-300/60'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                   whileHover={{ scale: 1.2 }}
                   animate={{ 
-                    scale: index === currentIndex ? 1.5 : 1 
+                    scale: index === currentIndex ? 1.2 : 1 
                   }}
                 />
               ))}
@@ -261,12 +264,12 @@ const Testimonials = () => {
 
             <motion.button 
               onClick={handleNext}
-              className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200 z-10 shadow-md"
+              className="p-3 rounded-full bg-[#2a1444] hover:bg-[#c026d3] border border-[#522573] text-purple-100 hover:text-white transition-colors duration-200 z-10 shadow-lg cursor-pointer"
               aria-label="Next testimonials"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </motion.button>
@@ -281,17 +284,17 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              className="bg-gray-50 p-5 rounded-lg shadow-sm flex flex-col"
+              className="bg-[#24123a]/90 backdrop-blur-md border border-[#4a2268] hover:border-[#c026d3]/60 p-5 rounded-2xl shadow-xl flex flex-col text-left"
               variants={cardVariants}
               whileHover="hover"
             >
               <StarRating rating={testimonial.rating} />
-              <p className="text-gray-600 font-[para] text-sm leading-relaxed mb-4 text-left flex-grow">
+              <p className="text-purple-100/90 font-[para] text-sm leading-relaxed mb-4 text-left flex-grow italic">
                 "{testimonial.content}"
               </p>
-              <div className="text-left mt-auto">
-                <h5 className="font-[heading-2] font-bold text-gray-800">{testimonial.name}</h5>
-                <p className="text-[#23aa5d] text-sm font-[para]">{testimonial.position}</p>
+              <div className="text-left mt-auto pt-3 border-t border-[#4a2268]">
+                <h5 className="font-[heading-2] font-bold text-white text-base">{testimonial.name}</h5>
+                <p className="text-[#e879f9] text-sm font-medium font-[para]">{testimonial.position}</p>
               </div>
             </motion.div>
           ))}

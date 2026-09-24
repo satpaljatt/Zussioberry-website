@@ -175,20 +175,20 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-10 sm:py-20 px-2 xs:px-4 sm:px-6 bg-white relative overflow-hidden">
+    <section className="py-10 sm:py-20 px-2 xs:px-4 sm:px-6 relative overflow-hidden bg-[#071527] text-white">
       {/* Decorative lemons, responsive: hide on mobile, show on md+ */}
-      <div className="hidden md:block absolute left-0 top-0 w-40 md:w-72 z-0">
+      <div className="hidden md:block absolute left-0 top-0 w-40 md:w-72 z-0 pointer-events-none opacity-40">
         <img src="/assets/sectionZussioberry/FAQs.png" alt="Lemon Decor" className="w-full" />
       </div>
-      <div className="hidden md:block absolute right-0 bottom-0 w-40 md:w-72 z-0">
+      <div className="hidden md:block absolute right-0 bottom-0 w-40 md:w-72 z-0 pointer-events-none opacity-40">
         <img src="/assets/sectionZussioberry/RightFAQs.png" alt="Lemon Decor" className="w-full" />
       </div>
 
       <div className="text-center mb-8 sm:mb-12 relative z-10">
-        <h2 className="text-2xl xs:text-3xl sm:text-3xl font-[heading-2] font-bold">
+        <h2 className="text-2xl xs:text-3xl sm:text-3xl font-[heading-2] font-bold text-white">
           YOUR QUERIES <span className="text-[#23aa5d]">ANSWERED</span> HERE !
         </h2>
-        <p className="text-gray-600 mt-2 font-[para] text-sm xs:text-base">
+        <p className="text-gray-300 mt-2 font-[para] text-sm xs:text-base">
           Find quick answers to the questions we get asked the most.
         </p>
       </div>
@@ -197,26 +197,26 @@ const FAQSection = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border border-gray-200 sm:border-gray-300 cursor-pointer rounded-md sm:rounded-lg overflow-hidden transition-shadow bg-white"
+            className="border border-[#1e3a5f] cursor-pointer rounded-xl overflow-hidden transition-all bg-[#0f223d] shadow-md hover:border-[#23aa5d]/50"
           >
             <button
               onClick={() => toggle(index)}
-              className="w-full cursor-pointer text-left px-3 xs:px-4 py-2 xs:py-3 flex justify-between items-center bg-white hover:bg-gray-100 focus:outline-none"
+              className="w-full cursor-pointer text-left px-4 py-3 xs:py-3.5 flex justify-between items-center bg-[#0f223d] hover:bg-[#152e52] focus:outline-none transition-colors"
               aria-expanded={activeIndex === index}
               aria-controls={`faq-answer-${index}`}
             >
-              <span className="font-medium text-gray-800 text-sm xs:text-base">{faq.question}</span>
-              <span className="text-lg xs:text-xl text-gray-600">
-                {activeIndex === index ? '-' : '+'}
+              <span className="font-medium text-white text-sm xs:text-base">{faq.question}</span>
+              <span className="text-lg xs:text-xl text-[#23aa5d] font-bold">
+                {activeIndex === index ? '−' : '+'}
               </span>
             </button>
             <div
               id={`faq-answer-${index}`}
-              className={`transition-all duration-300 ease-in-out bg-gray-50 ${
+              className={`transition-all duration-300 ease-in-out bg-[#0b1b33] border-t border-[#1e3a5f] ${
                 activeIndex === index
-                  ? 'max-h-96 opacity-100 py-2 xs:py-3 px-3 xs:px-4'
-                  : 'max-h-0 opacity-0 py-0 px-3 xs:px-4'
-              } text-xs xs:text-sm sm:text-sm text-gray-700 font-[para] overflow-hidden`}
+                  ? 'max-h-96 opacity-100 py-3 xs:py-4 px-4'
+                  : 'max-h-0 opacity-0 py-0 px-4'
+              } text-xs xs:text-sm sm:text-sm text-gray-200 font-[para] overflow-hidden`}
               style={{
                 visibility: activeIndex === index ? 'visible' : 'hidden',
               }}

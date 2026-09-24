@@ -69,9 +69,10 @@ export default function TheySay() {
   };
 
   return (
-    <section className="relative w-full bg-[#0b1c0e] text-white pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden select-none">
-      {/* Ambient Radial Gradient Glow matching Footer */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,_rgba(35,170,93,0.18),_transparent_70%)] pointer-events-none" />
+    <section className="relative w-full bg-[#160a26] text-white pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden select-none">
+      {/* Ambient Radial Berry & Purple Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,_rgba(192,38,211,0.2),_transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,_rgba(225,29,72,0.12),_transparent_60%)] pointer-events-none" />
 
       {/* Floating Fruit Accent on Left (Kiwi) */}
       <motion.div
@@ -134,13 +135,13 @@ export default function TheySay() {
       </motion.div>
 
       <div className="max-w-[1080px] mx-auto px-4 sm:px-6 relative z-20">
-        {/* Engaging Headline without the word 'Testimonial' */}
+        {/* Engaging Headline */}
         <div className="text-center mb-10 md:mb-14">
           <motion.p
             animate={{ y: [0, -3, 0] }}
             transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
             style={{ fontFamily: "'Dawning of a New Day', cursive" }}
-            className="text-[30px] sm:text-[36px] md:text-[42px] text-[#23aa5d] leading-none mb-2 drop-shadow-sm"
+            className="text-[30px] sm:text-[36px] md:text-[42px] text-[#e879f9] leading-none mb-2 drop-shadow-sm"
           >
             Real Sips, Real Stories
           </motion.p>
@@ -154,25 +155,25 @@ export default function TheySay() {
 
           <p
             style={{ fontFamily: "'Open Sans', sans-serif" }}
-            className="text-white/70 text-[14px] sm:text-[15.5px] max-w-[620px] mx-auto font-light leading-relaxed"
+            className="text-purple-200/80 text-[14px] sm:text-[15.5px] max-w-[620px] mx-auto font-light leading-relaxed"
           >
             Crafted with 100% natural fruit pulp, in-house processing, and zero artificial flavors. Hear directly from the people who love our drinks!
           </p>
         </div>
 
         {/* Elevated Glassmorphic Review Showcase Card */}
-        <div className="relative max-w-[880px] mx-auto bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-[28px] p-6 sm:p-10 md:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+        <div className="relative max-w-[880px] mx-auto bg-[#24123a]/90 backdrop-blur-md border border-[#4a2268] rounded-[28px] p-6 sm:p-10 md:p-14 shadow-[0_20px_60px_rgba(18,6,32,0.7)]">
           {/* Subtle Calligraphy Watermark Backdrop */}
           <span
             aria-hidden="true"
             style={{ fontFamily: "'Dawning of a New Day', cursive" }}
-            className="absolute inset-0 flex items-center justify-center text-[75px] sm:text-[115px] md:text-[155px] text-white/[0.03] pointer-events-none select-none whitespace-nowrap overflow-hidden"
+            className="absolute inset-0 flex items-center justify-center text-[75px] sm:text-[115px] md:text-[155px] text-purple-400/[0.04] pointer-events-none select-none whitespace-nowrap overflow-hidden"
           >
             Zussioberry
           </span>
 
           {/* Rating Badges & Verified Pill */}
-          <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-6 pb-5 border-b border-white/10">
+          <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-6 pb-5 border-b border-purple-400/15">
             <div className="flex items-center gap-1.5">
               {[...Array(5)].map((_, i) => (
                 <svg
@@ -183,12 +184,12 @@ export default function TheySay() {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
-              <span className="text-[12.5px] sm:text-[13.5px] font-semibold text-white/80 ml-1.5 tracking-wide">
+              <span className="text-[12.5px] sm:text-[13.5px] font-semibold text-purple-100/90 ml-1.5 tracking-wide">
                 5.0 / 5.0
               </span>
             </div>
 
-            <span className="inline-flex items-center gap-1.5 bg-[#23aa5d]/15 border border-[#23aa5d]/35 text-[#23aa5d] text-[11px] sm:text-[12px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 bg-fuchsia-500/15 border border-fuchsia-500/35 text-[#e879f9] text-[11px] sm:text-[12px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
               <span>✓</span> Verified Guest Review
             </span>
           </div>
@@ -206,13 +207,13 @@ export default function TheySay() {
               >
                 <p
                   style={{ fontFamily: "'Quicksand', sans-serif" }}
-                  className="text-[18px] sm:text-[22px] md:text-[24px] font-[500] text-white leading-[1.6] md:leading-[1.65] italic tracking-[0.01em]"
+                  className="text-[18px] sm:text-[22px] md:text-[24px] font-[500] text-purple-50 leading-[1.6] md:leading-[1.65] italic tracking-[0.01em]"
                 >
                   &ldquo;{current.quote}&rdquo;
                 </p>
 
                 {/* Favorite Sip Tag */}
-                <span className="inline-block mt-4 text-[12px] sm:text-[13px] font-medium text-[#FFF64F] tracking-wide bg-white/5 border border-white/10 px-3.5 py-1 rounded-full">
+                <span className="inline-block mt-4 text-[12px] sm:text-[13px] font-medium text-[#fbcfe8] tracking-wide bg-purple-900/40 border border-purple-700/40 px-3.5 py-1 rounded-full">
                   🍓 Favorite: {current.favorite}
                 </span>
               </motion.div>
@@ -220,7 +221,7 @@ export default function TheySay() {
           </div>
 
           {/* Author Details & Avatar Selector */}
-          <div className="relative z-10 mt-8 pt-6 border-t border-white/10 flex flex-col items-center">
+          <div className="relative z-10 mt-8 pt-6 border-t border-purple-400/15 flex flex-col items-center">
             {/* 4 Clickable Avatars with Glowing Ring */}
             <div className="flex items-center justify-center gap-3.5 sm:gap-5 mb-4">
               {reviews.map((item, idx) => (
@@ -230,8 +231,8 @@ export default function TheySay() {
                   onClick={() => setCurrentIndex(idx)}
                   className={`relative rounded-full transition-all duration-300 cursor-pointer overflow-hidden ${
                     currentIndex === idx
-                      ? "w-14 h-14 sm:w-16 sm:h-16 ring-4 ring-[#23aa5d] shadow-[0_0_20px_rgba(35,170,93,0.6)] scale-110"
-                      : "w-10 h-10 sm:w-12 sm:h-12 opacity-50 hover:opacity-85 ring-2 ring-white/30"
+                      ? "w-14 h-14 sm:w-16 sm:h-16 ring-4 ring-[#c026d3] shadow-[0_0_20px_rgba(192,38,211,0.6)] scale-110"
+                      : "w-10 h-10 sm:w-12 sm:h-12 opacity-50 hover:opacity-85 ring-2 ring-purple-300/30"
                   }`}
                   aria-label={`View review by ${item.name}`}
                 >
@@ -255,7 +256,7 @@ export default function TheySay() {
             </h3>
             <span
               style={{ fontFamily: "'Open Sans', sans-serif" }}
-              className="text-[12.5px] sm:text-[13.5px] font-medium text-white/60 block mt-0.5 tracking-wide"
+              className="text-[12.5px] sm:text-[13.5px] font-medium text-purple-200/70 block mt-0.5 tracking-wide"
             >
               {current.role}
             </span>
@@ -266,7 +267,7 @@ export default function TheySay() {
             type="button"
             onClick={handlePrev}
             aria-label="Previous review"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#23aa5d] text-white flex items-center justify-center transition-all duration-200 cursor-pointer border border-white/15 backdrop-blur-sm z-20"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#2a1444]/80 hover:bg-[#c026d3] text-white flex items-center justify-center transition-all duration-200 cursor-pointer border border-[#522573] backdrop-blur-sm z-20 shadow-lg"
           >
             ←
           </button>
@@ -274,7 +275,7 @@ export default function TheySay() {
             type="button"
             onClick={handleNext}
             aria-label="Next review"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#23aa5d] text-white flex items-center justify-center transition-all duration-200 cursor-pointer border border-white/15 backdrop-blur-sm z-20"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#2a1444]/80 hover:bg-[#c026d3] text-white flex items-center justify-center transition-all duration-200 cursor-pointer border border-[#522573] backdrop-blur-sm z-20 shadow-lg"
           >
             →
           </button>
@@ -290,8 +291,8 @@ export default function TheySay() {
               onClick={() => setCurrentIndex(idx)}
               className={`transition-all duration-300 cursor-pointer ${
                 currentIndex === idx
-                  ? "w-8 h-2.5 bg-[#23aa5d] rounded-full shadow-[0_0_10px_rgba(35,170,93,0.7)]"
-                  : "w-2.5 h-2.5 bg-white/30 rounded-full hover:bg-white/70"
+                  ? "w-8 h-2.5 bg-gradient-to-r from-[#e879f9] to-[#c026d3] rounded-full shadow-[0_0_10px_rgba(232,121,249,0.7)]"
+                  : "w-2.5 h-2.5 bg-purple-400/30 rounded-full hover:bg-purple-300/70"
               }`}
             />
           ))}

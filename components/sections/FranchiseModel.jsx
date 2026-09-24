@@ -198,7 +198,7 @@ const FranchiseModel = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <img src="./assets/model/1highway.jpg" alt="Franchise Model" className="w-full h-full object-cover" />
+              <img src="/assets/model/1highway.jpg" alt="Franchise Model" className="w-full h-full object-cover" />
             </motion.div>
           </motion.div>
 

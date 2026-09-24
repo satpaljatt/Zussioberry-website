@@ -556,7 +556,6 @@ export default function AboutPage() {
                           className="attachment-full size-full w-full h-auto object-contain drop-shadow-2xl"
                           alt="Smoothie Showcase"
                           decoding="async"
-                          loading="lazy"
                           srcSet="https://frappe.qodeinteractive.com/wp-content/uploads/2018/04/h3-img-3.png 600w, https://frappe.qodeinteractive.com/wp-content/uploads/2018/04/h3-img-3-236x300.png 236w"
                           sizes="(max-width: 600px) 100vw, 600px"
                         />

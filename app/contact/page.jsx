@@ -229,7 +229,6 @@
 //                 height="100%"
 //                 style={{ border: 0, minHeight: "400px" }}
 //                 allowFullScreen=""
-//                 loading="lazy"
 //                 referrerPolicy="no-referrer-when-downgrade"
 //                 title="Zussioberry Location"
 //               ></iframe>
@@ -482,7 +481,6 @@ export default function page() {
                 height="100%" 
                 style={{ border: 0, minHeight: "400px" }} 
                 allowFullScreen="" 
-                loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Zussioberry Works Location - Reliance Corporate Park"
               ></iframe>

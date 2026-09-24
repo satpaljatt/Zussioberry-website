@@ -213,13 +213,13 @@ const Navbar = () => {
             {/* ---------------------------------------------------------------- */}
             {/* 3. CENTER NAVIGATION (Frappé Start-to-End Dotted Underlines)     */}
             {/* ---------------------------------------------------------------- */}
-            <nav className="hidden lg:flex items-center space-x-7 xl:space-x-9">
+            <nav className="hidden md:flex items-center space-x-3.5 md:space-x-4 lg:space-x-6 xl:space-x-8">
 
               {/* Home Nav Item */}
               <div className="relative py-2 flex items-center group cursor-pointer">
                 <Link
                   href="/"
-                  className={`text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${isActive('/')
+                  className={`text-[13.5px] lg:text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${isActive('/')
                       ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
                       : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
                     }`}
@@ -243,7 +243,7 @@ const Navbar = () => {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${isAboutActive
+                  className={`flex items-center gap-1 text-[13.5px] lg:text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${isAboutActive
                       ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
                       : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
                     }`}
@@ -251,7 +251,7 @@ const Navbar = () => {
                 >
                   <span>About</span>
                   <ChevronDown
-                    size={15}
+                    size={14}
                     className={`transition-transform duration-200 ${aboutDropdownOpen
                         ? (isAboutPage ? 'rotate-180 text-white' : 'rotate-180 text-[#23aa5d]')
                         : (isAboutPage ? 'text-white/80' : 'text-[#8f8f8f]')
@@ -295,7 +295,6 @@ const Navbar = () => {
               </div>
 
               {/* Menu Dropdown (Savoury, Beverages, Brews, Frozen) */}
-              {/* Menu Dropdown (Savoury, Beverages, Brews, Frozen, Raw Menu) */}
               <div
                 ref={menuDropdownRef}
                 className="relative py-2 group flex items-center cursor-pointer"
@@ -313,7 +312,7 @@ const Navbar = () => {
                       }
                     }
                   }}
-                  className={`flex items-center gap-1 text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${isMenuActive
+                  className={`flex items-center gap-1 text-[13.5px] lg:text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 cursor-pointer ${isMenuActive
                       ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
                       : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
                     }`}
@@ -328,7 +327,7 @@ const Navbar = () => {
                     className="p-0.5 hover:opacity-80 inline-flex items-center"
                   >
                     <ChevronDown
-                      size={15}
+                      size={14}
                       className={`transition-transform duration-200 ${menuDropdownOpen
                           ? (isAboutPage ? 'rotate-180 text-white' : 'rotate-180 text-[#23aa5d]')
                           : (isAboutPage ? 'text-white/80' : 'text-[#8f8f8f]')
@@ -390,7 +389,7 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.href}
-                    className={`text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${isActive(item.href)
+                    className={`text-[13.5px] lg:text-[15px] font-medium tracking-[0.02em] transition-colors duration-200 ${isActive(item.href)
                         ? (isAboutPage ? 'text-white font-bold' : 'text-[#23aa5d] font-semibold')
                         : (isAboutPage ? 'text-white/90 hover:text-white' : 'text-[#5a5a5a]')
                       }`}
@@ -410,13 +409,13 @@ const Navbar = () => {
             {/* ---------------------------------------------------------------- */}
             {/* 4. RIGHT ACTION ("Get Franchise" Primary Button)                 */}
             {/* ---------------------------------------------------------------- */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
               <motion.button
                 type="button"
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => router.push('/franchise')}
-                className={`px-6 py-2.5 rounded-[5px] text-[14px] font-semibold tracking-wider transition-all duration-200 cursor-pointer ${isAboutPage
+                className={`px-4 py-2 lg:px-6 lg:py-2.5 rounded-[5px] text-[13px] lg:text-[14px] font-semibold tracking-wider transition-all duration-200 cursor-pointer ${isAboutPage
                     ? 'bg-white text-[#2BA863] hover:bg-gray-100 shadow-[0_4px_14px_rgba(0,0,0,0.15)]'
                     : 'bg-[#23aa5d] hover:bg-[#1e9652] text-white shadow-[0_4px_14px_rgba(35,170,93,0.35)] hover:shadow-[0_6px_20px_rgba(35,170,93,0.45)]'
                   }`}
@@ -428,7 +427,7 @@ const Navbar = () => {
             {/* ---------------------------------------------------------------- */}
             {/* 5. MOBILE ACTIONS (Franchise Button + Hamburger)                 */}
             {/* ---------------------------------------------------------------- */}
-            <div className="flex lg:hidden items-center space-x-2">
+            <div className="flex md:hidden items-center space-x-2">
               <button
                 type="button"
                 onClick={() => router.push('/franchise')}
@@ -442,7 +441,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setIsOpen(true)}
-                className={`p-2 focus:outline-none rounded-md transition-colors ${isAboutPage ? 'text-white hover:text-white/80' : 'text-[#5a5a5a] hover:text-[#23aa5d]'
+                className={`p-2 focus:outline-none rounded-md transition-colors cursor-pointer ${isAboutPage ? 'text-white hover:text-white/80' : 'text-[#5a5a5a] hover:text-[#23aa5d]'
                   }`}
                 aria-label="Open Navigation Menu"
               >
@@ -450,44 +449,6 @@ const Navbar = () => {
               </button>
             </div>
 
-          </div>
-
-          {/* ---------------------------------------------------------------- */}
-          {/* 5b. MOBILE NAVIGATION LINKS (Fully responsive 4-col x 2-row grid) */}
-          {/* ---------------------------------------------------------------- */}
-          <div className={`lg:hidden border-t py-2 px-2 sm:px-4 ${isAboutPage ? 'border-white/20' : 'border-gray-100'}`}>
-            <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
-              {mobileNavLinks.map((item) => {
-                const active = isMobileLinkActive(item);
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => {
-                      if (item.href.startsWith('/#') && pathname === '/') {
-                        e.preventDefault();
-                        const id = item.href.replace('/#', '');
-                        const el = document.getElementById(id);
-                        if (el) {
-                          el.scrollIntoView({ behavior: 'smooth' });
-                        }
-                      }
-                    }}
-                    className={`py-1.5 px-1 text-center rounded-[6px] text-[12px] sm:text-[13px] font-medium transition-all flex items-center justify-center ${
-                      isAboutPage
-                        ? (active
-                            ? 'bg-white text-[#2BA863] font-bold shadow-sm'
-                            : 'text-white/90 hover:text-white bg-white/10 hover:bg-white/20')
-                        : (active
-                            ? 'bg-[#23aa5d] text-white font-semibold shadow-sm'
-                            : 'text-[#5a5a5a] hover:text-[#23aa5d] bg-[#f5f5f5] hover:bg-gray-200/80')
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
           </div>
         </div>
 
@@ -643,7 +604,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={handleCloseMenu}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 md:hidden"
             />
 
             {/* Slide-in Drawer */}
@@ -652,7 +613,7 @@ const Navbar = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-50 lg:hidden flex flex-col justify-between overflow-y-auto"
+              className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-50 md:hidden flex flex-col justify-between overflow-y-auto"
             >
               {/* Drawer Top Header */}
               <div className="p-6">

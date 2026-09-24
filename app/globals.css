@@ -136,81 +136,82 @@ body {
 }
 
 /* ------------------------------------------------------------- */
-/* BLUE COLOR BLINK ANIMATIONS (User Requested: "blink in blue color") */
+/* ENERGETIC ELECTRIC NEON LIME & RADIANT EMERALD BLINK ANIMATIONS */
 /* ------------------------------------------------------------- */
 
-/* Blue Word / Text Blink */
-@keyframes blueWordBlink {
+/* Neon Lime & Emerald Word / Text Blink */
+@keyframes limeWordBlink {
   0% {
     color: #ffffff;
-    text-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    text-shadow: 0 0 0 rgba(0, 230, 118, 0);
     transform: scale(1);
   }
   15% {
-    color: #1d4ed8; /* Deep Electric Blue */
-    opacity: 0.12;
+    color: #047857; /* Deep Radiant Emerald */
+    opacity: 0.15;
     transform: scale(0.95);
-    text-shadow: 0 0 15px #2563eb;
+    text-shadow: 0 0 16px #059669;
   }
   30% {
-    color: #60a5fa; /* Neon Bright Blue */
+    color: #00e676; /* Vivid Electric Neon Lime */
     opacity: 1;
     transform: scale(1.1);
-    text-shadow: 0 0 20px #3b82f6, 0 0 35px #2563eb, 0 0 50px #60a5fa;
+    text-shadow: 0 0 22px #00e676, 0 0 40px #10b981, 0 0 60px #00e676;
   }
   45% {
-    color: #1d4ed8;
-    opacity: 0.12;
+    color: #047857;
+    opacity: 0.15;
     transform: scale(0.95);
-    text-shadow: 0 0 15px #2563eb;
+    text-shadow: 0 0 16px #059669;
   }
   60% {
-    color: #38bdf8; /* Vibrant Cyan Sky Blue */
+    color: #6ee7b7; /* Bright Mint Light */
     opacity: 1;
     transform: scale(1.06);
-    text-shadow: 0 0 25px #3b82f6, 0 0 45px #2563eb;
+    text-shadow: 0 0 25px #00e676, 0 0 45px #10b981;
   }
   75% {
-    color: #1e40af;
-    opacity: 0.3;
+    color: #065f46;
+    opacity: 0.35;
     transform: scale(0.98);
   }
   100% {
-    color: #60a5fa;
+    color: #00e676;
     opacity: 1;
-    text-shadow: 0 0 16px #3b82f6;
+    text-shadow: 0 0 20px #00e676, 0 0 35px #10b981;
     transform: scale(1);
   }
 }
 
+.animate-lime-word-blink,
 .animate-blue-word-blink {
-  animation: blueWordBlink 0.6s ease-in-out forwards !important;
+  animation: limeWordBlink 0.6s ease-in-out forwards !important;
 }
 
-/* Blue Card & Outline Glow Blink */
-@keyframes blueCardBlink {
+/* Neon Lime & Emerald Card & Outline Glow Blink */
+@keyframes limeCardBlink {
   0% {
-    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    box-shadow: 0 0 0 rgba(0, 230, 118, 0);
     transform: scale(1);
   }
   15% {
     opacity: 0.18;
-    box-shadow: 0 0 12px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
     transform: scale(0.97);
   }
   30% {
     opacity: 1;
-    box-shadow: 0 0 35px rgba(59, 130, 246, 1), 0 0 70px rgba(37, 99, 235, 0.9);
+    box-shadow: 0 0 35px rgba(0, 230, 118, 1), 0 0 70px rgba(16, 185, 129, 0.9), 0 0 95px rgba(0, 230, 118, 0.5);
     transform: scale(1.03);
   }
   45% {
     opacity: 0.18;
-    box-shadow: 0 0 12px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
     transform: scale(0.97);
   }
   60% {
     opacity: 1;
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.95), 0 0 60px rgba(37, 99, 235, 0.8);
+    box-shadow: 0 0 30px rgba(0, 230, 118, 0.95), 0 0 60px rgba(16, 185, 129, 0.85);
     transform: scale(1.02);
   }
   75% {
@@ -219,61 +220,63 @@ body {
   }
   100% {
     opacity: 1;
-    box-shadow: 0 0 22px rgba(59, 130, 246, 0.7);
+    box-shadow: 0 0 25px rgba(0, 230, 118, 0.8), 0 0 45px rgba(16, 185, 129, 0.6);
     transform: scale(1);
   }
 }
 
+.animate-lime-card-blink,
 .animate-blue-card-blink {
-  animation: blueCardBlink 0.6s ease-in-out forwards !important;
+  animation: limeCardBlink 0.6s ease-in-out forwards !important;
 }
 
-/* Blue Category Button Blink */
-@keyframes blueButtonBlink {
+/* Neon Lime & Emerald Category Button Blink */
+@keyframes limeButtonBlink {
   0% {
-    background-color: #2563eb;
+    background-color: #059669;
     color: #ffffff;
     transform: scale(1);
-    box-shadow: 0 0 0 rgba(37, 99, 235, 0);
+    box-shadow: 0 0 0 rgba(0, 230, 118, 0);
   }
   15% {
     opacity: 0.15;
     transform: scale(0.92);
-    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
   }
   30% {
-    background-color: #3b82f6;
+    background-color: #00e676;
     color: #ffffff;
     opacity: 1;
     transform: scale(1.12);
-    box-shadow: 0 0 25px #2563eb, 0 0 45px #60a5fa;
+    box-shadow: 0 0 30px #00e676, 0 0 55px #10b981;
   }
   45% {
     opacity: 0.15;
     transform: scale(0.94);
-    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
   }
   60% {
-    background-color: #1d4ed8;
-    color: #93c5fd;
+    background-color: #10b981;
+    color: #ffffff;
     opacity: 1;
     transform: scale(1.06);
-    box-shadow: 0 0 20px #2563eb;
+    box-shadow: 0 0 25px #00e676;
   }
   75% {
     opacity: 0.4;
   }
   100% {
-    background-color: #2563eb;
+    background-color: #00e676;
     color: #ffffff;
     opacity: 1;
     transform: scale(1.05);
-    box-shadow: 0 0 18px rgba(37, 99, 235, 0.85);
+    box-shadow: 0 0 22px rgba(0, 230, 118, 0.9), 0 0 40px rgba(16, 185, 129, 0.7);
   }
 }
 
+.animate-lime-button-blink,
 .animate-blue-button-blink {
-  animation: blueButtonBlink 0.6s ease-in-out forwards !important;
+  animation: limeButtonBlink 0.6s ease-in-out forwards !important;
 }
 
 @keyframes gridBlinkFade {

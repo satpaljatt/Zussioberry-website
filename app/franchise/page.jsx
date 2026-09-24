@@ -2,11 +2,10 @@ import FAQSection from '@/components/sections/FAQSection'
 import FranchiseForm from '@/components/sections/FranchiseForm'
 import FranchiseIntro from '@/components/sections/FranchiseIntro'
 import React from 'react'
-import FranchiseModel from '@/components/sections/FranchiseModel'
 
 const page = () => {
   return (
-    <div>
+    <div className="bg-[#071527] min-h-screen text-white">
       <FranchiseIntro />
 
       <FranchiseForm />

@@ -523,29 +523,78 @@ export default function SavourySelectionsPage() {
       </section>
 
       {/* ---------------------------------------------------------------------- */}
-      {/* 2. ORIGINAL SAVOURY SELECTIONS HEADING & CATEGORY PILLS (Preserved)    */}
+      {/* 2. SAVOURY SELECTIONS HEADING & CATEGORY PILLS (Harmonized Styling)    */}
       {/* ---------------------------------------------------------------------- */}
-      <div className="bg-white pt-10 sm:pt-12 pb-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[heading-1] text-green-600 mb-4">
+      <div
+        className="relative pt-10 sm:pt-14 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #FFFFFF 0%, #FAF5EA 18%, #F5EEDA 42%, #EEF6EB 76%, #FFFFFF 100%)',
+        }}
+      >
+        {/* Ambient atmospheric glows bridging wood (warm amber) & garden (soft mint) */}
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+          {/* Top-left warm amber glow evoking the rustic wood hero banner & savory warmth */}
+          <div className="absolute -top-12 -left-12 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#f6dfb2]/45 blur-3xl pointer-events-none" />
+          {/* Bottom-right soft pistachio glow echoing the fresh mint green menu section below */}
+          <div className="absolute -bottom-12 -right-12 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#bcebbd]/55 blur-3xl pointer-events-none" />
+          {/* Subtle floating organic leaf accents on borders */}
+          <div className="absolute top-1/2 -left-3 -translate-y-1/2 w-6 sm:w-8 opacity-40 rotate-[22deg] pointer-events-none select-none hidden lg:block">
+            <Image
+              src="/assets/home/raw-menu/floating-leaf.png"
+              alt="decorative leaf"
+              width={31}
+              height={49}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          <div className="absolute top-1/2 -right-3 -translate-y-1/2 w-6 sm:w-8 opacity-40 rotate-[-35deg] pointer-events-none select-none hidden lg:block">
+            <Image
+              src="/assets/home/raw-menu/floating-leaf.png"
+              alt="decorative leaf"
+              width={31}
+              height={49}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          {/* Attractive Culinary Sub-Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/80 border border-amber-600/20 text-amber-900 text-xs sm:text-sm font-semibold mb-3 shadow-xs backdrop-blur-xs">
+            <span className="w-2 h-2 rounded-full bg-[#23aa5d] animate-pulse"></span>
+            <span style={{ fontFamily: "'Patrick Hand', cursive" }} className="tracking-wide text-sm sm:text-base">
+              Artisan Crafted • 100% Fresh Ingredients
+            </span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-[heading-1] text-[#1b8344] mb-2 tracking-tight drop-shadow-xs">
             Savoury Selections
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-8 font-[para]">
+
+          {/* Harmonious Dual-Tone Decorative Divider (Amber-to-Green) */}
+          <div className="w-24 sm:w-28 h-1 bg-gradient-to-r from-amber-400 via-[#23aa5d] to-emerald-600 mx-auto rounded-full mb-3 shadow-xs"></div>
+
+          <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto mb-7 sm:mb-8 font-[para] leading-relaxed">
             Explore our diverse menu of delicious and satisfying food options made with fresh ingredients
           </p>
 
-          {/* Original Category Buttons */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4">
+          {/* Category Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mb-2">
             {menuCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => handleSelectCategory(category.id)}
-                className={`px-4 py-2 rounded-md cursor-pointer text-sm sm:text-base font-medium transition-all duration-300 ${activeCategory === category.id && !searchQuery
-                    ? 'bg-blue-600 text-white shadow-lg transform scale-105 ring-2 ring-blue-400'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
-                  } ${blinkingCategory === category.id ? 'animate-blue-button-blink ring-4 ring-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.9)]' : ''}`}
+                className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full cursor-pointer text-xs sm:text-sm md:text-[15px] font-semibold transition-all duration-200 ${
+                  activeCategory === category.id && !searchQuery
+                    ? 'bg-gradient-to-r from-[#00e676] via-[#10b981] to-[#059669] text-white shadow-lg shadow-emerald-500/35 transform scale-105 ring-2 ring-[#00e676]'
+                    : 'bg-white/90 text-stone-700 hover:text-[#059669] hover:bg-white border border-stone-200/90 hover:border-[#00e676]/60 shadow-xs hover:shadow-sm'
+                } ${
+                  blinkingCategory === category.id
+                    ? 'animate-lime-button-blink ring-4 ring-[#00e676] shadow-[0_0_30px_rgba(0,230,118,1),0_0_55px_rgba(16,185,129,0.9)]'
+                    : ''
+                }`}
               >
-                <span className={blinkingCategory === category.id ? 'animate-blue-word-blink font-bold' : ''}>
+                <span className={blinkingCategory === category.id ? 'animate-lime-word-blink font-bold' : ''}>
                   {category.name}
                 </span>
               </button>
@@ -691,7 +740,7 @@ export default function SavourySelectionsPage() {
                       key={`${item.name}-${index}`}
                       onClick={() => handleCardClick(item)}
                       className={`flex items-center group transition-all duration-300 cursor-pointer p-2.5 sm:p-3.5 -m-2.5 sm:-m-3.5 rounded-2xl ${isBlinking
-                          ? 'animate-blue-card-blink ring-4 ring-blue-400 shadow-[0_0_35px_rgba(59,130,246,1),0_0_65px_rgba(37,99,235,0.85)] bg-blue-500/20 z-30'
+                          ? 'animate-lime-card-blink ring-4 ring-[#00e676] shadow-[0_0_35px_rgba(0,230,118,1),0_0_70px_rgba(16,185,129,0.9)] bg-emerald-500/20 z-30'
                           : 'hover:bg-white/15 hover:translate-x-1 active:scale-98'
                         }`}
                       title={item.targetCategoryId ? `Click to view all ${item.name}` : `Click to view ${item.name}`}
@@ -704,7 +753,7 @@ export default function SavourySelectionsPage() {
                             }`}
                         >
                           <SplashBackdrop
-                            color={isBlinking ? '#3b82f6' : (item.splashColor || '#ea580c')}
+                            color={isBlinking ? '#00e676' : (item.splashColor || '#ea580c')}
                             variant={index}
                           />
                         </div>
@@ -712,7 +761,7 @@ export default function SavourySelectionsPage() {
                         {/* Circular Medium Size Food Image */}
 
                         <div
-                          className={`relative z-10 w-[108px] h-[108px] sm:w-[122px] sm:h-[122px] md:w-[130px] md:h-[130px] rounded-full overflow-hidden border-2 border-white/95 shadow-md bg-white transition-all duration-300 ${isBlinking ? 'ring-4 ring-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.95)] scale-105' : ''
+                          className={`relative z-10 w-[108px] h-[108px] sm:w-[122px] sm:h-[122px] md:w-[130px] md:h-[130px] rounded-full overflow-hidden border-2 border-white/95 shadow-md bg-white transition-all duration-300 ${isBlinking ? 'ring-4 ring-[#00e676] shadow-[0_0_35px_rgba(0,230,118,1),0_0_60px_rgba(16,185,129,0.9)] scale-105' : ''
                             }`}
                         >
                           <Image
@@ -731,20 +780,20 @@ export default function SavourySelectionsPage() {
                         <div className="flex items-baseline w-full">
                           <h4
                             style={{ fontFamily: "'Patrick Hand', cursive" }}
-                            className={`text-white text-2xl sm:text-3xl md:text-[28px] font-bold tracking-wide whitespace-nowrap drop-shadow-sm truncate transition-colors duration-200 cursor-pointer ${isBlinking ? 'animate-blue-word-blink text-blue-400' : 'group-hover:text-blue-50'
+                            className={`text-white text-2xl sm:text-3xl md:text-[28px] font-bold tracking-wide whitespace-nowrap drop-shadow-sm truncate transition-colors duration-200 cursor-pointer ${isBlinking ? 'animate-lime-word-blink text-[#00e676]' : 'group-hover:text-emerald-100'
                               }`}
                           >
                             {item.name}
                           </h4>
                           {/* Dotted connecting line */}
                           <span
-                            className={`flex-1 border-b-2 border-dotted mx-2.5 sm:mx-3 relative -top-[5px] transition-colors ${isBlinking ? 'border-blue-400' : 'border-white/60'
+                            className={`flex-1 border-b-2 border-dotted mx-2.5 sm:mx-3 relative -top-[5px] transition-colors ${isBlinking ? 'border-[#00e676]' : 'border-white/60'
                               }`}
                           ></span>
                           {/* Price */}
                           <span
                             style={{ fontFamily: "'Patrick Hand', cursive" }}
-                            className={`text-xl sm:text-2xl md:text-[24px] font-bold whitespace-nowrap drop-shadow-sm transition-colors ${isBlinking ? 'text-blue-300' : 'text-white'
+                            className={`text-xl sm:text-2xl md:text-[24px] font-bold whitespace-nowrap drop-shadow-sm transition-colors ${isBlinking ? 'text-[#a7f3d0]' : 'text-white'
                               }`}
                           >
                             {item.price}
@@ -771,8 +820,8 @@ export default function SavourySelectionsPage() {
                             <span
                               style={{ fontFamily: "'Patrick Hand', cursive" }}
                               className={`text-xs sm:text-sm font-bold px-2.5 py-0.5 rounded-full transition-all ${isBlinking
-                                  ? 'bg-blue-600 text-white shadow-md scale-105'
-                                  : 'text-white/90 bg-white/20 group-hover:bg-blue-600 group-hover:text-white'
+                                  ? 'bg-[#00e676] text-emerald-950 font-extrabold shadow-[0_0_20px_rgba(0,230,118,0.95)] scale-105'
+                                  : 'text-white/90 bg-white/20 group-hover:bg-[#00e676] group-hover:text-emerald-950'
                                 }`}
                             >
                               Explore {item.name} →
