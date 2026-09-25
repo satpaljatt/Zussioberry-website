@@ -45,34 +45,28 @@ export default function FruitsomeBlog() {
   return (
     <section className="relative w-full bg-[#FFF64F] pt-20 md:pt-28 pb-0 overflow-hidden">
       {/* Floating Fruit Particle (Left) */}
-      <motion.div
-        animate={{ y: [0, -14, 0], rotate: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-20 -left-6 sm:left-4 lg:left-8 w-[60px] sm:w-[85px] z-20 pointer-events-none select-none drop-shadow-md"
-      >
+      <div className="absolute top-20 -left-6 sm:left-4 lg:left-8 w-[60px] sm:w-[85px] z-20 pointer-events-none select-none drop-shadow-md animate-smooth-float gpu-accelerate">
         <Image
           src="/assets/decorations/raspberry-corner.png"
           alt="Floating raspberry"
           width={90}
           height={90}
+          loading="lazy"
           className="w-full h-auto object-contain mix-blend-multiply"
         />
-      </motion.div>
+      </div>
 
       {/* Floating Leaf Particle (Right) */}
-      <motion.div
-        animate={{ y: [0, 14, 0], rotate: [0, -12, 0] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-        className="absolute top-36 -right-4 sm:right-6 lg:right-10 w-[55px] sm:w-[75px] z-20 pointer-events-none select-none drop-shadow-md"
-      >
+      <div className="absolute top-36 -right-4 sm:right-6 lg:right-10 w-[55px] sm:w-[75px] z-20 pointer-events-none select-none drop-shadow-md animate-smooth-float-reverse gpu-accelerate">
         <Image
           src="/assets/home/raw-menu/floating-leaf.png"
           alt="Floating leaf"
           width={80}
           height={100}
+          loading="lazy"
           className="w-full h-auto object-contain"
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-16 md:mb-24">
         {/* Section Header */}

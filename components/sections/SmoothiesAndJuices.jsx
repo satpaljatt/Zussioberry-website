@@ -92,57 +92,44 @@ export default function SmoothiesAndJuices() {
   return (
     <section className="relative w-full bg-[#B4C817] pt-[90px] md:pt-[110px] pb-0 overflow-hidden">
       {/* 1. Floating Raspberry Particle (Left) */}
-      <motion.div
-        animate={{ y: [0, -14, 0], rotate: [0, 8, -6, 0] }}
-        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[140px] -left-6 sm:left-4 lg:left-8 w-[65px] sm:w-[90px] lg:w-[110px] z-20 pointer-events-none select-none drop-shadow-[0_12px_20px_rgba(0,0,0,0.2)]"
-      >
+      <div className="absolute top-[140px] -left-6 sm:left-4 lg:left-8 w-[65px] sm:w-[90px] lg:w-[110px] z-20 pointer-events-none select-none drop-shadow-[0_12px_20px_rgba(0,0,0,0.2)] animate-smooth-float gpu-accelerate">
         <Image
           src="/assets/decorations/raspberry-corner.png"
           alt="Floating raspberry"
           width={120}
           height={120}
+          loading="lazy"
           className="w-full h-auto object-contain mix-blend-multiply"
         />
-      </motion.div>
+      </div>
 
       {/* 2. Floating Kiwi Particle (Right) */}
-      <motion.div
-        animate={{ y: [0, 16, 0], rotate: [0, -10, 6, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-        className="absolute top-[280px] -right-6 sm:right-4 lg:right-8 w-[70px] sm:w-[95px] lg:w-[120px] z-20 pointer-events-none select-none drop-shadow-[0_12px_20px_rgba(0,0,0,0.2)]"
-      >
+      <div className="absolute top-[280px] -right-6 sm:right-4 lg:right-8 w-[70px] sm:w-[95px] lg:w-[120px] z-20 pointer-events-none select-none drop-shadow-[0_12px_20px_rgba(0,0,0,0.2)] animate-smooth-float-reverse gpu-accelerate">
         <Image
           src="/assets/decorations/kiwi-corner.png"
           alt="Floating kiwi slice"
           width={130}
           height={130}
+          loading="lazy"
           className="w-full h-auto object-contain mix-blend-multiply"
         />
-      </motion.div>
+      </div>
 
       {/* 3. Floating Organic Leaf Accent */}
-      <motion.div
-        animate={{ y: [0, -10, 0], rotate: [0, 15, 0] }}
-        transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-        className="absolute bottom-[160px] left-[10%] w-[35px] sm:w-[45px] z-20 pointer-events-none select-none opacity-85"
-      >
+      <div className="absolute bottom-[160px] left-[10%] w-[35px] sm:w-[45px] z-20 pointer-events-none select-none opacity-85 animate-smooth-float gpu-accelerate">
         <Image
           src="/assets/home/raw-menu/floating-leaf.png"
           alt="Floating leaf"
           width={45}
           height={60}
+          loading="lazy"
           className="w-full h-auto object-contain drop-shadow-md"
         />
-      </motion.div>
+      </div>
 
       {/* 4. Rotating Circular Badge (Top Right) */}
       <div className="absolute top-12 right-6 lg:right-16 z-20 hidden sm:block pointer-events-none select-none">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="relative w-[100px] h-[100px] lg:w-[115px] lg:h-[115px] flex items-center justify-center rounded-full bg-white/15 backdrop-blur-xs border-2 border-dashed border-white/50 text-white shadow-lg"
-        >
+        <div className="relative w-[100px] h-[100px] lg:w-[115px] lg:h-[115px] flex items-center justify-center rounded-full bg-white/15 backdrop-blur-xs border-2 border-dashed border-white/50 text-white shadow-lg animate-smooth-rotate gpu-accelerate">
           <svg className="w-full h-full" viewBox="0 0 100 100">
             <path
               id="circlePath"
@@ -156,7 +143,7 @@ export default function SmoothiesAndJuices() {
             </text>
           </svg>
           <span className="absolute text-lg">🍓</span>
-        </motion.div>
+        </div>
       </div>
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-16 md:mb-20">

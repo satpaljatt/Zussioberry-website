@@ -69,19 +69,19 @@ export default function RawMenu() {
     <section id="menu" className="relative w-full bg-[#abe9b0] pt-12 pb-0 overflow-hidden scroll-mt-20">
 
       {/* 3. Top-Left "100% RAW INGREDIENTS" Ribbon & Seeds Badge */}
-      <div className="absolute top-[-5px] left-[-10px] sm:top-[5px] sm:left-[5px] lg:top-[15px] lg:left-[20px] w-[180px] sm:w-[240px] lg:w-[290px] z-10 pointer-events-none select-none">
+      <div className="absolute top-[-5px] left-[-10px] sm:top-[5px] sm:left-[5px] lg:top-[15px] lg:left-[20px] w-[180px] sm:w-[240px] lg:w-[290px] z-10 pointer-events-none select-none gpu-accelerate">
         <Image
           src="/assets/home/raw-menu/raw-ingrediants.png"
           alt="100% Raw Ingredients"
           width={298}
           height={247}
+          loading="lazy"
           className="w-full h-auto object-contain"
-          priority
         />
       </div>
 
       {/* 4. Bottom-Left Pink & Green Striped Straws */}
-      <div className="absolute bottom-[-15px] left-[-15px] sm:bottom-[-10px] sm:left-[-5px] lg:bottom-[-5px] lg:left-[10px] w-[170px] sm:w-[230px] lg:w-[290px] z-10 pointer-events-none select-none">
+      <div className="absolute bottom-[-15px] left-[-15px] sm:bottom-[-10px] sm:left-[-5px] lg:bottom-[-5px] lg:left-[10px] w-[170px] sm:w-[230px] lg:w-[290px] z-10 pointer-events-none select-none gpu-accelerate">
         <div className="relative w-full h-[200px] sm:h-[260px] lg:h-[320px]">
           {/* Pink Straw */}
           <div className="absolute bottom-0 left-0 w-[85%]">
@@ -90,6 +90,7 @@ export default function RawMenu() {
               alt="Pink straw"
               width={468}
               height={715}
+              loading="lazy"
               className="w-full h-auto object-contain"
             />
           </div>
@@ -100,6 +101,7 @@ export default function RawMenu() {
               alt="Green straw"
               width={503}
               height={586}
+              loading="lazy"
               className="w-full h-auto object-contain"
             />
           </div>
@@ -107,14 +109,14 @@ export default function RawMenu() {
       </div>
 
       {/* 5. Top-Right Spoon with Blueberries */}
-      <div className="absolute top-[20px] right-[-10px] sm:top-[30px] sm:right-[5px] lg:top-[40px] lg:right-[20px] w-[210px] sm:w-[270px] lg:w-[330px] z-10 pointer-events-none select-none">
+      <div className="absolute top-[20px] right-[-10px] sm:top-[30px] sm:right-[5px] lg:top-[40px] lg:right-[20px] w-[210px] sm:w-[270px] lg:w-[330px] z-10 pointer-events-none select-none gpu-accelerate">
         <Image
           src="/assets/home/raw-menu/spoon-blueberries.png"
           alt="Spoon with blueberries"
           width={309}
           height={151}
+          loading="lazy"
           className="w-full h-auto object-contain"
-          priority
         />
       </div>
 

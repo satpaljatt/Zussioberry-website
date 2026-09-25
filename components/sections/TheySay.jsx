@@ -75,64 +75,52 @@ export default function TheySay() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,_rgba(225,29,72,0.12),_transparent_60%)] pointer-events-none" />
 
       {/* Floating Fruit Accent on Left (Kiwi) */}
-      <motion.div
-        animate={{ y: [0, -12, 0], rotate: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-20 -left-6 sm:left-4 lg:left-8 w-[60px] sm:w-[85px] z-10 pointer-events-none select-none opacity-80 drop-shadow-xl"
-      >
+      <div className="absolute top-20 -left-6 sm:left-4 lg:left-8 w-[60px] sm:w-[85px] z-10 pointer-events-none select-none opacity-80 drop-shadow-xl animate-smooth-float gpu-accelerate">
         <Image
           src="/assets/decorations/kiwi-corner.png"
           alt="Floating kiwi"
           width={90}
           height={90}
+          loading="lazy"
           className="w-full h-auto object-contain"
         />
-      </motion.div>
+      </div>
 
       {/* Floating Straw on Bottom Left */}
-      <motion.div
-        animate={{ y: [0, 8, 0], rotate: [0, 4, 0] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -bottom-8 -left-6 sm:left-4 w-[110px] sm:w-[150px] md:w-[180px] pointer-events-none select-none z-10 opacity-70 drop-shadow-2xl"
-      >
+      <div className="absolute -bottom-8 -left-6 sm:left-4 w-[110px] sm:w-[150px] md:w-[180px] pointer-events-none select-none z-10 opacity-70 drop-shadow-2xl animate-smooth-float-reverse gpu-accelerate">
         <Image
           src="/assets/home/raw-menu/straw-green.png"
           alt="Striped straw"
           width={180}
           height={210}
+          loading="lazy"
           className="w-full h-auto object-contain"
         />
-      </motion.div>
+      </div>
 
       {/* Floating Blueberry Accent on Right */}
-      <motion.div
-        animate={{ y: [0, -14, 0], rotate: [0, 15, 0] }}
-        transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-24 right-6 sm:right-14 w-8 sm:w-11 pointer-events-none select-none z-10 opacity-90 drop-shadow-lg"
-      >
+      <div className="absolute top-24 right-6 sm:right-14 w-8 sm:w-11 pointer-events-none select-none z-10 opacity-90 drop-shadow-lg animate-smooth-float gpu-accelerate">
         <Image
           src="/assets/home/raw-menu/blueberry-2.png"
           alt="Blueberry"
           width={44}
           height={44}
+          loading="lazy"
           className="w-full h-auto object-contain"
         />
-      </motion.div>
+      </div>
 
       {/* Floating Raspberry Accent on Bottom Right */}
-      <motion.div
-        animate={{ y: [0, 10, 0], rotate: [0, -12, 0] }}
-        transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-12 -right-4 sm:right-6 lg:right-12 w-[55px] sm:w-[75px] z-10 pointer-events-none select-none opacity-75 drop-shadow-xl"
-      >
+      <div className="absolute bottom-12 -right-4 sm:right-6 lg:right-12 w-[55px] sm:w-[75px] z-10 pointer-events-none select-none opacity-75 drop-shadow-xl animate-smooth-float-reverse gpu-accelerate">
         <Image
           src="/assets/decorations/raspberry-corner.png"
           alt="Raspberry"
           width={75}
           height={75}
+          loading="lazy"
           className="w-full h-auto object-contain"
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-[1080px] mx-auto px-4 sm:px-6 relative z-20">
         {/* Engaging Headline */}

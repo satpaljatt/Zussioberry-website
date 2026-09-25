@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppSticky from "@/components/sections/WhatsAppSticky";
+import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -25,6 +26,7 @@ const dawning = Dawning_of_a_New_Day({
   subsets: ["latin"],
   weight: ["400"],
   display: "swap",
+  fallback: ["cursive"],
 });
 
 export default function RootLayout({ children }) {
@@ -90,10 +92,12 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-        <Navbar />
-        {children}
-        <Footer />
-        <WhatsAppSticky />
+        <SmoothScrollProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <WhatsAppSticky />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

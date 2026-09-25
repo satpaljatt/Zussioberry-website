@@ -21,22 +21,13 @@ import FlagshipModel from "@/components/sections/GlobalModel";
 
 export default function Home() {
   return (
-   <>
-   <Slider/>
-   <SmoothiesAndJuices/>
-   <RawMenu/>
-   <SummerBreezeBanner/>
-   <FruitsomeBlog/>
-   <TheySay/>
-   {/* <WelcomeTo/> */}
-   {/* <WhyChoose /> */}
-   {/* <FranchiseModel /> */}
-   {/* <FlagshipModel /> */}
-   {/* <MakeOrder/> */}
-   {/* <BeveragesSection /> */}
-   {/* <JourneyInNumbers /> */}
-   {/* <Testimonials /> */}
-   {/* <NewsletterSection /> */}
-   </>
+    <main className="w-full min-h-screen overflow-x-hidden">
+      <Slider />
+      <SmoothiesAndJuices />
+      <RawMenu />
+      <SummerBreezeBanner />
+      <FruitsomeBlog />
+      <TheySay />
+    </main>
   );
 }

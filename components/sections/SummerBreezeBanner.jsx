@@ -9,33 +9,27 @@ export default function SummerBreezeBanner() {
   return (
     <section className="relative w-full bg-[#FF679A] text-white pt-16 md:pt-24 pb-0 overflow-hidden">
       {/* Decorative Floating Seed Particles */}
-      <motion.div
-        animate={{ y: [0, -12, 0], rotate: [0, 10, 0] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-10 left-[8%] w-10 sm:w-12 pointer-events-none select-none opacity-85 z-0"
-      >
+      <div className="absolute top-10 left-[8%] w-10 sm:w-12 pointer-events-none select-none opacity-85 z-0 animate-smooth-float gpu-accelerate">
         <Image
           src="/assets/dev-tools/seed.png"
           alt="Floating seed"
           width={50}
           height={50}
+          loading="lazy"
           className="w-full h-auto object-contain drop-shadow-md"
         />
-      </motion.div>
+      </div>
 
-      <motion.div
-        animate={{ y: [0, 14, 0], rotate: [0, -14, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute top-[40%] right-[7%] w-9 sm:w-11 pointer-events-none select-none opacity-80 z-0"
-      >
+      <div className="absolute top-[40%] right-[7%] w-9 sm:w-11 pointer-events-none select-none opacity-80 z-0 animate-smooth-float-reverse gpu-accelerate">
         <Image
           src="/assets/home/raw-menu/floating-leaf.png"
           alt="Floating leaf"
           width={40}
           height={55}
+          loading="lazy"
           className="w-full h-auto object-contain drop-shadow-md"
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-16 md:mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
